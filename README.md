@@ -23,9 +23,9 @@
 Implementation timeline 
 3/9 to 3/12 -Complete initial research on how to animate certain elements and how to set up skeleton for grabbing data from API and utilizing them in project. 
 
-3/13- Create basic visualization of data in project and be able to ouput data in any form. Try to utilize D3 to create a simple graph. Make sure project can render data without reloading page. Make real time clock using setInterval 
+3/13- Create basic visualization of data in project and be able to ouput data in any form. Try to utilize D3 to create a simple graph. Make sure project can render data without reloading page. Make real time clock using setInterval. Finish basic html skeleton for site.
 
-3/14- Complete visualization for at least one element, begin to add logic for other elements. Begin working on animating logic for each element. Make sure logic can work on data from past dates. 
+3/14- Complete visualization for at least one element, begin to add logic for other elements. Begin working on animating logic for each element. Make sure logic can work on data from past dates.
 
 3/15- Complete visualization for all desired elements, try to work on animation logic for each element. Put final touches on CSS and colors 
 
