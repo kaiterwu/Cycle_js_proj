@@ -7,8 +7,8 @@ async function getCurrentData() {
     try {
        const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${zip}/${now}?key=${apiKey}`);
        if (response.ok) {
-         const post = await response.json();
-         console.log(post);
+         const data = await response.json();
+         console.log(data);
        } else {
          throw response;
        }
