@@ -1,4 +1,6 @@
-import Example from "./scripts/example"
+import Example from "./scripts/example";
+import getCurrentData from "./scripts/data"
+
 
 document.addEventListener("DOMContentLoaded", () => {
     // console.log("Hello world!")
@@ -9,24 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const zip = "11040"
     const now = Math.floor(Date.now()/1000)
 
-
-    async function getCurrentData() {
+    getCurrentData()
     
-    try {
-       const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${zip}/${now}?key=${apiKey}&include=current`);
-       if (response.ok) {
-         const data = await response.json();
-
-         console.log(data);
-       } else {
-         throw response;
-       }
-    } catch (errorResponse) {
-        console.error(errorResponse);
-    }
-  }
-
-  getCurrentData()
+    
 
 });
 
