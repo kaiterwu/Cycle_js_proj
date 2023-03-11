@@ -1,3 +1,4 @@
+import { timeToSeconds } from "./timeConvert"
 
 export function sunPath(data){
     let sunrise = document.createElement("li")
@@ -27,8 +28,15 @@ export function drawPath(queryData){
     .append("g")
         .attr("transform", `translate(${width / 2},${height / 2})`);
     
-    //dynamic querydata 
-    const currentTime = ""
+    //dynamic querydata , javascript time is in UTC, need to convert to EST 
+    let currentSeconds = timeToSeconds(queryData.currentConditions.datetime)
+    let sunriseSeconds = timeToSeconds(queryData.currentConditions.sunrise)
+    let sunsetSeconds = timeToSeconds(queryData.currentConditions.sunset)
+
+    
+    
+
+    
 
     // data object
     const data = {a:2000,b:2000,c:2000}
@@ -51,7 +59,7 @@ export function drawPath(queryData){
 
     const data_ready = pie(Object.entries(data))
 
-    // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
+    // compose chart, each part of the pie is a path that we build using arc function.
     svg
     .selectAll('path')
     .data(data_ready)
@@ -74,16 +82,7 @@ export function drawPath(queryData){
     .style("opacity", 1)
     
 
-    svg.append("path")
-    .style("fill", function(d) { return color(d.data.name); })
-    .transition().delay(function(d, i) { return i * 500; }).duration(500)
-    .attrTween('d', function(d) {
-       let i = d3.interpolate(d.startAngle+0.1, d.endAngle);
-       return function(t) {
-           d.endAngle = i(t);
-         return d3.svg.arc(d);
-       };
-  });
+
 }
 
 

@@ -12,7 +12,7 @@ async function getCurrentData() {
        const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${zip}/${now}?key=${apiKey}`);
        if (response.ok) {
           data = await response.json();
-          sunPath(data)
+          // sunPath(data)
          
          console.log(data);
        } else {
