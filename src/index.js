@@ -1,13 +1,14 @@
 import Example from "./scripts/example";
 import getCurrentData from "./scripts/data"
-import {drawPath,sunPath}  from "./scripts/sunmoves";
+import {drawSun}  from "./scripts/sunmoves";
+import { drawSeasons } from "./scripts/seasons";
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
     // console.log("Hello world!")
-    const main = document.getElementById("main")
-    new Example(main);
-    drawPath();
+    drawSun()
+    drawSeasons()
     
     
     

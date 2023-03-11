@@ -1,4 +1,4 @@
-// import drawPath from "./sunmoves";
+import {drawSun} from "./sunmoves";
 
 const apiKey = "4P48W2KCWFQAQ6SJ99K5H2VBM"
 const zip = "11040"
@@ -12,7 +12,7 @@ async function getCurrentData() {
        const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${zip}/${now}?key=${apiKey}`);
        if (response.ok) {
           data = await response.json();
-          // sunPath(data)
+          drawSun(data)
          
          console.log(data);
        } else {
