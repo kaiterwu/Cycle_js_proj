@@ -5,3 +5,11 @@
     color: $color;
 }
 
+#background{
+    
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    min-height:100vh;
+}
+
