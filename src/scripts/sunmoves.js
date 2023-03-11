@@ -28,7 +28,7 @@ export function drawPath(queryData){
         .attr("transform", `translate(${width / 2},${height / 2})`);
     
     //dynamic querydata 
-        
+    const currentTime = ""
 
     // data object
     const data = {a:2000,b:2000,c:2000}
@@ -57,11 +57,11 @@ export function drawPath(queryData){
     .data(data_ready)
     .join('path')
     // .attr('d', d3.arc()
-    //     .innerRadius(60)         // Inner circle hole size 
+    //     .innerRadius(60)         // KEEP THIS LOGIC FOR MOON DELAY TRANSITION
     //     .outerRadius(radius))
     .transition().delay(function(d, i) { return i * 400; })
     .duration(400)
-    .attrTween('d', function(d) {
+    .attrTween('d', function(d) {                   // 'd' is current datum and function is "tween" function that interpolates through the circle path 
         let i = d3.interpolate(d.startAngle+0.1, d.endAngle);
         return function(t) {
             d.endAngle = i(t);
@@ -70,7 +70,7 @@ export function drawPath(queryData){
    })
     .style('fill', d => color(d.data[0]))
     .attr("stroke", "white")
-    .style("stroke-width", "5px")
+    .style("stroke-width", "10px")
     .style("opacity", 1)
     
 
