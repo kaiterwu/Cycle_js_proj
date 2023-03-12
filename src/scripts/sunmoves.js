@@ -77,7 +77,7 @@ export function drawSun(queryData){
     
 
     // data object
-    const data = {a:2000,b:2000,c:2000}
+    const data = {a:0,b:2000,c:2000}
     
     // //dynamic data 
     // const data = {elapse:nowSeconds,day:daySeconds,night:nightSeconds}

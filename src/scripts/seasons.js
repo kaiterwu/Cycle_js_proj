@@ -1,4 +1,5 @@
 // code will be similar to sunmoves script 
+import { currentDays } from "./timeConvert";
 
 export function drawSeasons(queryData){
 
@@ -20,16 +21,67 @@ export function drawSeasons(queryData){
     
 
     //dynamic data 
+    // let currentDay = currentDays(queryData.days[0].datetime)
+    // const year = parseInt(queryData.days[0].datetime.slice(0,4))
+
+    // function winterTime(currentDay){
+    //     let winter = 0 
+    //     if (currentDay>90){
+    //         return 0 
+    //     }else{
+    //         return 90 - currentDay
+    //     }
+    // }
+
+    // function springTime(currentDay){
+    //     if (currentDay > 182){
+    //         return 0 
+    //     }else if (currentDay > 90){
+    //         return 182 - currentDay
+    //     }else{
+    //         return 92
+    //     }
+    // }
+
+    // function summerTime(currentDay){
+    //     if (currentDay > 273 ){
+    //         return 0 
+    //     }else if (currentDay > 182){
+    //         return 273-currentDay
+    //     }else{
+    //         return 92
+    //     }
+    // }
     
+    // function fallTime(currentDay){
+    //     if (currentDay>273){
+    //         return 365-currentDay
+    //     }else{
+    //         return 91
+    //     }
+        
+    // }
+
+    // console.log(winterTime(currentDay))
+    // console.log(springTime(currentDay))
+    // console.log(summerTime(currentDay))
+    // console.log(fallTime(currentDay))
+    // console.log(queryData.days[0].datetime)
+
+    // const data = 
+    // {"current":currentDay,"winter":winterTime(currentDay),"spring":springTime(currentDay),
+    // "summer":summerTime(currentDay),"fall":fallTime(currentDay)}
+
+
 
     // data object
-    const data = {a:2000,b:2000,c:2000,d:2000}
+    const data = {e:0,a:2000,b:2000,c:2000,d:2000}
     
     
 
     // set color
     const color = d3.scaleOrdinal()
-    .range(["#99ffe6","#065535", "#fff228",'#f77c3f'])
+    .range(["#ffffff","#99ffe6","#065535", "#fff228",'#f77c3f'])
 
     // Compute the position of each group on the pie:
     const pie = d3.pie()

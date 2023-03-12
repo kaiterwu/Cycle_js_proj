@@ -1,4 +1,5 @@
 import {drawSun} from "./sunmoves";
+import { drawSeasons } from "./seasons";
 
 const apiKey = "4P48W2KCWFQAQ6SJ99K5H2VBM"
 const zip = "11040"
@@ -13,8 +14,10 @@ async function getCurrentData() {
        if (response.ok) {
           data = await response.json();
           drawSun(data)
+          console.log(data)
+          drawSeasons(data)
          
-         console.log(data);
+     
        } else {
          throw response;
        }
