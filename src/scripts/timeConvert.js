@@ -27,6 +27,54 @@ export function currentDays(str){
    else{return sumDays[parsedMonth-2]+parsedDay + 30}
 }
 
+export function moonPhases(data){
+   let colors = ["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"]
+    const moonIndex = data.currentConditions.moonphase
+   // const moonIndex = data
+
+ 
+
+      if(moonIndex < 0.125 || moonIndex ===1){
+          colors.splice(0,0,"#000000")
+      }
+
+      else if(moonIndex >= 0.125 && moonIndex<0.25){
+          colors.splice(1,0,"#000000")
+      }
+      
+      else if(moonIndex >= 0.25 && moonIndex<0.375){
+          colors.splice(2,0,"#000000")
+      }
+
+      else if(moonIndex >= 0.375 && moonIndex<0.5){
+          colors.splice(3,0,"#000000")
+      }
+
+      else if(moonIndex >= 0.5 && moonIndex<0.625){
+          colors.splice(4,0,"#000000")
+      }
+      
+      else if(moonIndex >= 0.625 && moonIndex<0.75){
+          colors.splice(5,0,"#000000")
+      }
+      
+      else if(moonIndex >= 0.75 && moonIndex<0.875){
+          colors.splice(6,0,"#000000")
+      }
+      
+      else if(moonIndex >= 0.875 && moonIndex<1){
+          colors.splice(7,0,"#000000")
+      }
+
+      else{
+          colors.splice(0,0,"#000000")
+      }
+         
+     return colors 
+
+}
+  
+
 
     
 

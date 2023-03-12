@@ -1,5 +1,5 @@
 
-
+import { moonPhases } from "./timeConvert";
 
 
 export function drawMoon(queryData){
@@ -22,12 +22,14 @@ export function drawMoon(queryData){
     
 
     // data object
-    const data = {"🌕":8,"🌖":8,"🌗":8,"🌘":8,"🌑":8,"🌒":8,"🌓":8,"🌔":8}
+    const data = {"🌑":8,"🌒":8,"🌓":8,"🌔":8,"🌕":8,"🌖":8,"🌗":8,"🌘":8}
     
 
     // set color
     const color = d3.scaleOrdinal()
-    .range(["#ffffff","#000000","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"])
+    // .range(["#ffffff","#000000","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"])
+    //dynamic color
+    .range(moonPhases(queryData))
     
 
     // Compute the position of each group on the pie:

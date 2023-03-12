@@ -23,13 +23,16 @@ body{
     // justify-content: center;
     align-items: center;
     // position: relative;
-    margin-bottom:20px;
+    // margin-bottom:20px;
 
 }
 #header{
     height:150px;
     width:1000px;
-    border:solid white;
+    border:double 10px white;
+    border-radius: 20px;
+    
+ 
 }
 #view{
     display: flex;
@@ -42,7 +45,10 @@ body{
     justify-content:flex-start;
     align-items: flex-start;
     position: relative;
-    border: solid white;
+    border: double 10px white;
+    border-radius: 20px;
+    margin-top: 20px;
+    
 }
 
 
