@@ -75,7 +75,7 @@ export function drawSeasons(queryData){
 
 
     // data object
-    const data = {e:0,a:2000,b:2000,c:2000,d:2000}
+    const data = {e:2000,a:2000,b:2000,c:2000,d:2000}
     
     
 
@@ -89,7 +89,7 @@ export function drawSeasons(queryData){
     .sort(null)
 
     const arc =  d3.arc()
-    .innerRadius(radius -20)
+    .innerRadius(radius -60)
     .outerRadius(radius);
     
         
@@ -105,8 +105,8 @@ export function drawSeasons(queryData){
     // .attr('d', d3.arc()
     //     .innerRadius(60)         // KEEP THIS LOGIC FOR MOON DELAY TRANSITION
     //     .outerRadius(radius))
-    .transition().delay(function(d, i) { return i * 300; })
-    .duration(300)
+    .transition()
+    .duration(2000)
     .attrTween('d', function(d) {                   // 'd' is current datum and function is "tween" function that interpolates through the circle path 
         let i = d3.interpolate(d.startAngle+0.1, d.endAngle);
         return function(t) {
@@ -116,7 +116,7 @@ export function drawSeasons(queryData){
    })
     .style('fill', d => color(d.data[0]))
     .attr("stroke", "black")
-    .style("stroke-width", "5px")
+    .style("stroke-width", "20px")
     .style("opacity", 1)
     
 

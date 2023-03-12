@@ -77,7 +77,7 @@ export function drawSun(queryData){
     
 
     // data object
-    const data = {a:0,b:2000,c:2000}
+    const data = {a:2000,b:2000,c:2000}
     
     // //dynamic data 
     // const data = {elapse:nowSeconds,day:daySeconds,night:nightSeconds}
@@ -108,8 +108,8 @@ export function drawSun(queryData){
     // .attr('d', d3.arc()
     //     .innerRadius(60)         // KEEP THIS LOGIC FOR MOON DELAY TRANSITION
     //     .outerRadius(radius))
-    .transition().delay(function(d, i) { return i * 300; })
-    .duration(300)
+    .transition()
+    .duration(2000)
     .attrTween('d', function(d) {                   // 'd' is current datum and function is "tween" function that interpolates through the circle path 
         let i = d3.interpolate(d.startAngle+0.1, d.endAngle);
         return function(t) {
@@ -121,6 +121,7 @@ export function drawSun(queryData){
     .attr("stroke", "white")
     .style("stroke-width", "2px")
     .style("opacity", 1)
+    
     
 
 
