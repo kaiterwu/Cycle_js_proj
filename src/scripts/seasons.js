@@ -7,10 +7,10 @@ export function drawSeasons(queryData){
         height = 600,
         margin = 20;
 
-    // The radius of the pieplot is half the width or half the height (smallest one). Margin slightly subtracted 
+   
     const radius = Math.min(width, height) / 2 - margin
 
-    // append the svg object to the div called 'sun-path'
+    // append the svg object to the div called 'seasons'
     const svg = d3.select("#seasons")
     .append("svg")
         .attr("width", width)
@@ -118,6 +118,7 @@ export function drawSeasons(queryData){
     .attr("stroke", "black")
     .style("stroke-width", "20px")
     .style("opacity", 1)
+    
     
 
 

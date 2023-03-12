@@ -123,6 +123,7 @@ export function drawSun(queryData){
     .style("opacity", 1)
     
     
+    
 
 
 }

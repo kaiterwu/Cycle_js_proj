@@ -1,15 +1,17 @@
 
-//set the dimensions and margins of the graph
+
+
+
 export function drawMoon(queryData){
 
     const width = 450,
         height = 450,
         margin = 20;
 
-    // The radius of the pieplot is half the width or half the height (smallest one). Margin slightly subtracted 
+
     const radius = Math.min(width, height) / 2 - margin
 
-    // append the svg object to the div called 'sun-path'
+
     const svg = d3.select("#moons")
     .append("svg")
         .attr("width", width)
@@ -25,7 +27,8 @@ export function drawMoon(queryData){
 
     // set color
     const color = d3.scaleOrdinal()
-    .range(["#000000","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"])
+    .range(["#ffffff","#000000","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"])
+    
 
     // Compute the position of each group on the pie:
     const pie = d3.pie()
@@ -43,7 +46,7 @@ export function drawMoon(queryData){
 
     // compose chart, each part of the pie is a path that we build using arc function.
     svg
-    .selectAll('slices')
+    .selectAll('slice')
     .data(data_ready)
     .join('path')
     .attr('d', arc)
@@ -53,6 +56,7 @@ export function drawMoon(queryData){
     .attr("stroke", "black")
     .style("stroke-width", "30px")
     .style("opacity", 1)
+
 
     //logic for annotating moons
 
@@ -71,4 +75,6 @@ export function drawMoon(queryData){
 
 
 }
+
+
 
