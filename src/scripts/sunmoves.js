@@ -28,7 +28,7 @@ export function drawSun(queryData){
     .append("g")
         .attr("transform", `translate(${width / 2},${height / 2})`);
     
-    //dynamic querydata , javascript time is in UTC, need to convert to EST 
+    // dynamic querydata , javascript time is in UTC, need to convert to EST 
     // let currentSeconds = timeToSeconds(queryData.currentConditions.datetime)
     // let sunriseSeconds = timeToSeconds(queryData.currentConditions.sunrise)
     // let sunsetSeconds = timeToSeconds(queryData.currentConditions.sunset)
@@ -84,7 +84,7 @@ export function drawSun(queryData){
 
     // set color
     const color = d3.scaleOrdinal()
-    .range(["#ffffff","#ebb811", "#062971",])
+    .range(["#ffffff","#ff0660", "#416fec",])
 
     // Compute the position of each group on the pie:
     const pie = d3.pie()
@@ -108,8 +108,8 @@ export function drawSun(queryData){
     // .attr('d', d3.arc()
     //     .innerRadius(60)         // KEEP THIS LOGIC FOR MOON DELAY TRANSITION
     //     .outerRadius(radius))
-    .transition().delay(function(d, i) { return i * 400; })
-    .duration(400)
+    .transition().delay(function(d, i) { return i * 300; })
+    .duration(300)
     .attrTween('d', function(d) {                   // 'd' is current datum and function is "tween" function that interpolates through the circle path 
         let i = d3.interpolate(d.startAngle+0.1, d.endAngle);
         return function(t) {
@@ -119,7 +119,7 @@ export function drawSun(queryData){
    })
     .style('fill', d => color(d.data[0]))
     .attr("stroke", "white")
-    .style("stroke-width", "5px")
+    .style("stroke-width", "2px")
     .style("opacity", 1)
     
 

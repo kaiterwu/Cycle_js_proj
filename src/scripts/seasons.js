@@ -19,6 +19,7 @@ export function drawSeasons(queryData){
     
     
 
+    //dynamic data 
     
 
     // data object
@@ -52,8 +53,8 @@ export function drawSeasons(queryData){
     // .attr('d', d3.arc()
     //     .innerRadius(60)         // KEEP THIS LOGIC FOR MOON DELAY TRANSITION
     //     .outerRadius(radius))
-    .transition().delay(function(d, i) { return i * 400; })
-    .duration(400)
+    .transition().delay(function(d, i) { return i * 300; })
+    .duration(300)
     .attrTween('d', function(d) {                   // 'd' is current datum and function is "tween" function that interpolates through the circle path 
         let i = d3.interpolate(d.startAngle+0.1, d.endAngle);
         return function(t) {
