@@ -13,8 +13,8 @@ export function sunPath(data){
     //set the dimensions and margins of the graph
 export function drawSun(queryData){
 
-    const width = 250,
-        height = 250,
+    const width = 200,
+        height = 200,
         margin = 20;
 
     // The radius of the pieplot is half the width or half the height (smallest one). Margin slightly subtracted 
@@ -92,7 +92,7 @@ export function drawSun(queryData){
     .sort(null)
 
     const arc =  d3.arc()
-    .innerRadius(80)
+    .innerRadius(radius-10)
     .outerRadius(radius);
     
         
@@ -119,7 +119,7 @@ export function drawSun(queryData){
    })
     .style('fill', d => color(d.data[0]))
     .attr("stroke", "white")
-    .style("stroke-width", "10px")
+    .style("stroke-width", "5px")
     .style("opacity", 1)
     
 

@@ -2,8 +2,8 @@
 
 export function drawSeasons(queryData){
 
-    const width = 800,
-        height = 800,
+    const width = 600,
+        height = 600,
         margin = 20;
 
     // The radius of the pieplot is half the width or half the height (smallest one). Margin slightly subtracted 
@@ -28,7 +28,7 @@ export function drawSeasons(queryData){
 
     // set color
     const color = d3.scaleOrdinal()
-    .range(["#99ffe6","#cdff64", "#fff228",'#f77c3f'])
+    .range(["#99ffe6","#065535", "#fff228",'#f77c3f'])
 
     // Compute the position of each group on the pie:
     const pie = d3.pie()
@@ -36,7 +36,7 @@ export function drawSeasons(queryData){
     .sort(null)
 
     const arc =  d3.arc()
-    .innerRadius(radius -50)
+    .innerRadius(radius -20)
     .outerRadius(radius);
     
         
@@ -62,8 +62,8 @@ export function drawSeasons(queryData){
         };
    })
     .style('fill', d => color(d.data[0]))
-    .attr("stroke", "white")
-    .style("stroke-width", "10px")
+    .attr("stroke", "black")
+    .style("stroke-width", "5px")
     .style("opacity", 1)
     
 
