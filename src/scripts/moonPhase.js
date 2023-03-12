@@ -36,7 +36,7 @@ export function drawMoon(queryData){
     .sort(null)
 
     const arc =  d3.arc()
-    .innerRadius(radius-100)
+    .innerRadius(radius-80)
     .outerRadius(radius);
     
         
@@ -70,7 +70,7 @@ export function drawMoon(queryData){
   .attr("transform", function(d) { return `translate(${arc.centroid(d)})`})
   
   .style("text-anchor", "middle")
-  .style("font-size", 20)
+//   .style("font-size", 20)
   
 
 

@@ -89,7 +89,7 @@ export function drawSeasons(queryData){
     .sort(null)
 
     const arc =  d3.arc()
-    .innerRadius(radius -60)
+    .innerRadius(radius -40)
     .outerRadius(radius);
     
         
