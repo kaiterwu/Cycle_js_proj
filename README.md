@@ -2,6 +2,8 @@
 
 ## <b>[Wire frame diagram](./project_docs/cycle_wire_frame.pdf)</b>
 
+## [Try it here!](https://kaiterwu.github.io/Cycle_js_proj/)
+
 ## <u>Background</u>
 
 Cycle is a data visualization that grabs data from the VisualCrossing weather api  https://www.visualcrossing.com/; it includes several different datapoints such as moon index, sunrise/sunset, and other weather statistics. The goal of this API is to visualize these statistics in series of circular like elements that can be interacted with on the page. 
