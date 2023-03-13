@@ -1,6 +1,6 @@
 
 import { moonPhases } from "./timeConvert";
-
+import { moonPhaseName } from "./timeConvert";
 
 export function drawMoon(queryData,diameter,stroke,strokeColor,id){
 
@@ -84,6 +84,8 @@ export function openMoonModal(queryData){
     const openMoon = document.querySelector("#moons>svg")
     const closeModalBtn = document.querySelector(".close-btn")
     const svg = document.querySelector("#svg-container")
+    const upper = document.querySelector("#upper-text")
+    const lower = document.querySelector("#lower-text")
 
     const openModal=function(){
         modal.classList.remove("hidden")
@@ -95,10 +97,62 @@ export function openMoonModal(queryData){
         overlay.classList.add("hidden")
         svg.innerHTML = ""
     }
+
+    function createText(queryData){
+        const upperHead = document.createElement("p")
+        const upperPhase = document.createElement("h1")
+        const lowerHead = document.createElement("p")
+        const lowerPhase = document.createElement("h1")
+        const phases = ["New","Waxing Crescent","First Quarter","Waxing Gibbous",
+                        "Full","Waning Gibbous","Last Quarter","Waning Crescent"]
+        
+        const currentPhase = moonPhaseName(queryData)
+
+        upperHead.innerText = "Current Phase"
+        upperPhase.innerText = currentPhase
+
+        lowerHead.innerText = "Next Phase"
+        
+        const currentIndex = phases.indexOf(currentPhase)
+        if(currentIndex !== 7){
+            lowerPhase.innerText = phases[currentIndex+1]
+        }else{
+            lowerPhase.innerText = phases[0]
+        }
+
+        upperPhase.style.fontSize = "60px"
+        lowerPhase.style.fontSize = "60px"
+
+        upperPhase.style.fontStyle = "italic"
+        upperPhase.style.border = "5px solid black"
+        upperPhase.style.borderRadius = "20px"
+        upperPhase.style.background = "black"
+        upperPhase.style.color = "white"
+        upperPhase.style.boxShadow = "0px 0px 60px 20px rgba(255, 255, 255, 0.4) "
+
+        lowerPhase.style.fontStyle = "italic"
+        lowerPhase.style.border = "10px solid white"
+        lowerPhase.style.borderRadius = "20px"
+        lowerPhase.style.background = "white"
+        lowerPhase.style.color = "black"
+        lowerPhase.style.boxShadow = "0px 0px 60px 20px rgba(255, 255, 255, 0.4) "
+
+        upper.append(upperHead)
+        upper.append(upperPhase)
+        lower.append(lowerHead)
+        lower.append(lowerPhase)
+        
+
+    }
+
+    function onOpen(){
+        drawMoon(queryData,600,"30px","black","#svg-container")
+        createText(queryData)
+    }
   
 
     openMoon.addEventListener("click",openModal)
-    openMoon.addEventListener("click",()=>drawMoon(queryData,600,"30px","black","#svg-container"))
+    openMoon.addEventListener("click",onOpen)
     closeModalBtn.addEventListener("click",closeModal)
 
 

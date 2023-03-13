@@ -73,6 +73,51 @@ export function moonPhases(data){
      return colors 
 
 }
+
+export function moonPhaseName(data){
+    const moonIndex = data.currentConditions.moonphase
+    let phaseName;
+
+    if(moonIndex < 0.125 || moonIndex ===1){
+        phaseName = "New"
+    }
+
+    else if(moonIndex >= 0.125 && moonIndex<0.25){
+        phaseName = "Waxing Crescent"
+    }
+    
+    else if(moonIndex >= 0.25 && moonIndex<0.375){
+        phaseName = "First Quarter"
+    }
+
+    else if(moonIndex >= 0.375 && moonIndex<0.5){
+        phaseName = "Waxing Gibbous"
+    }
+
+    else if(moonIndex >= 0.5 && moonIndex<0.625){
+        phaseName = "Full"
+    }
+    
+    else if(moonIndex >= 0.625 && moonIndex<0.75){
+        phaseName = "Waning Gibbous"
+    }
+    
+    else if(moonIndex >= 0.75 && moonIndex<0.875){
+        phaseName = "Last Quarter"
+    }
+    
+    else if(moonIndex >= 0.875 && moonIndex<1){
+        phaseName = "Waning Crescent"
+    }
+
+    else{
+        phaseName = "New"
+    }
+       
+   return phaseName
+
+}
+
   
 
 

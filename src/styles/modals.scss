@@ -12,11 +12,23 @@
     top:22.5%;
     z-index: 1000;
 }
-.astro-modal
+.astro-modal, #info-text h1,p
 {animation:opac 1.5s}@keyframes opac{from{opacity:0} to{opacity:1}}
+
+
 
 #svg-container{
     width:600px;
+    display: grid;
+}
+#svg-container *{
+    grid-area: 1/1; 
+}
+
+#svg-container>img{
+    width:400px;
+    height:400px;
+    object-fit: fill;
 }
 
 
@@ -30,8 +42,23 @@
 
 }
 
+
+
+#info-text h1,p {
+    font-size: 45px;
+    color:white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align:center;
+    
+}
+
+#info-text h1{
+    font-size: 80px;
+    
+}
+
 .close-btn{
-    font-size: 20px;
+    font-size: 45px;
     color: white;
     padding:10px 10px;
     background-color: black;
@@ -44,8 +71,8 @@
 }
 .close-btn:hover{
     background-color: white;
-    color:black;
     border-color: black;
+    color:black;
 }
 
 #upper-text,#lower-text{
@@ -54,6 +81,8 @@
     flex-direction: column;
     width: inherit;
     height:250px;   
+    justify-content:space-evenly;
+    align-items: center;
 }
 
 .hidden{

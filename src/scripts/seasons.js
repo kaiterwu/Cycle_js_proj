@@ -62,11 +62,11 @@ export function drawSeasons(queryData,diameter,inner,stroke,strokeColor,id){
         
     }
 
-    console.log(winterTime(currentDay))
-    console.log(springTime(currentDay))
-    console.log(summerTime(currentDay))
-    console.log(fallTime(currentDay))
-    console.log(queryData.days[0].datetime)
+    // console.log(winterTime(currentDay))
+    // console.log(springTime(currentDay))
+    // console.log(summerTime(currentDay))
+    // console.log(fallTime(currentDay))
+    // console.log(queryData.days[0].datetime)
 
     const data = 
     {"current":currentDay,"winter":winterTime(currentDay),"spring":springTime(currentDay),
@@ -132,6 +132,8 @@ export function openSeasonsModal(queryData){
     const openSeasons = document.querySelector("#seasons>svg")
     const closeModalBtn = document.querySelector(".close-btn")
     const svg = document.querySelector("#svg-container")
+    const upper = document.querySelector("#upper-text")
+    const lower = document.querySelector("#lower-text")
     
 
     const openModal=function(){
@@ -144,9 +146,92 @@ export function openSeasonsModal(queryData){
         overlay.classList.add("hidden")
         svg.innerHTML=""
     }
+
+    function createText(queryData){
+        const upperHead = document.createElement("p")
+        const upperSeason = document.createElement("h1")
+        const lowerHead = document.createElement("p")
+        const lowerSeason = document.createElement("h1")
+
+        let currentDay = currentDays(queryData.days[0].datetime) -1
+        //90,92,92,91 ---- 90,181,273,364(365 === 1)
+        let currently;
+        let following;
+        let currentSeason;
+        let nextSeason;
+
+        if(currentDay <=90){
+            currently = currentDay
+            following = 90 - currentDay
+            currentSeason = "Winter"
+            nextSeason = "Spring"
+        }else if(currentDay > 90 && currentDay <= 181){
+            currently = currentDay-90 
+            following = 182 - currentDay
+            currentSeason = "Spring"
+            nextSeason = "Summer"
+        }else if (currentDay >182 && currentDay <= 273){
+            currently = currentDay - 182 
+            following = 273 - currentDay
+            currentSeason = "Summer"
+            nextSeason = "Fall"
+        }else {currently = currentDay-273
+                following = 365 - currentDay
+                currentSeason = "Fall"
+                nextSeason = "Winter"
+        }
+    
+       
+
+        upperHead.innerText = `${currently} day(s) into `
+        lowerHead.innerText = `${following} day(s) until`
+        upperSeason.innerText = `${currentSeason}`
+        lowerSeason.innerText = `${nextSeason}`
+//["#000000","#99ffe6","#065535", "#fff228",'#f77c3f'])
+        let currentColor 
+        let nextColor 
+        if(currentSeason === "Winter"){
+            currentColor = "#99ffe6"
+            nextColor = "#065535"
+        }else if (currentSeason === "Spring"){
+            currentColor = "#065535"
+            nextColor = "#fff228"
+        }else if (currentSeason === "Summer"){
+            currentColor = "#fff228"
+            nextColor = "#f77c3f"
+        }else{
+            currentColor = "#f77c3f"
+            nextColor = "#99ffe6"
+        }
+
+        upperSeason.style.color = currentColor
+        upperSeason.style.border = `5px solid ${currentColor}`
+        upperSeason.style.borderRadius = "20px"
+        upperSeason.style.background = "black"
+        upperSeason.style.boxShadow = `0px 0px 30px 10px ${currentColor} `
+        upperSeason.style.padding = "15px"
+
+        lowerSeason.style.border = `10px solid ${nextColor}`
+        lowerSeason.style.borderRadius = "20px"
+        lowerSeason.style.background = nextColor
+        lowerSeason.style.color = "black"
+        lowerSeason.style.boxShadow = `0px 0px 30px 10px ${nextColor} `
+
+        upper.append(upperHead)
+        upper.append(upperSeason)
+        lower.append(lowerHead)
+        lower.append(lowerSeason)
+        
+
+    }
+
+    function onOpen(){
+        drawSeasons(queryData,600,40,"5px","white","#svg-container")
+        createText(queryData)
+    }
   
 
     openSeasons.addEventListener("click",openModal)
-    openSeasons.addEventListener("click",()=>drawSeasons(queryData,600,40,"5px","white","#svg-container"))
+    openSeasons.addEventListener("click",onOpen)
     closeModalBtn.addEventListener("click",closeModal)
 }

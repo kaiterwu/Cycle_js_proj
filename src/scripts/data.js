@@ -18,7 +18,7 @@ export const getData = async function getCurrentData() {
          //  drawSun(data)
          //  setTimeout(drawMoon(data),1000)
          //  setTimeout(drawSeasons(data),1000)
-         //  console.log(data)
+          console.log(data)
          fetchData = data
          return data
      

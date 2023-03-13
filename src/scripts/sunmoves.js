@@ -112,14 +112,18 @@ export function drawSun(queryData,diameter,inner,stroke,strokeColor,id){
 
 export function openSunModal(queryData){
 
+    let currentSeconds = timeToSeconds(queryData.currentConditions.datetime)
+    let sunriseSeconds = timeToSeconds(queryData.currentConditions.sunrise)
+    let sunsetSeconds = timeToSeconds(queryData.currentConditions.sunset)
+
   
     const modal = document.querySelector(".astro-modal");
     const overlay = document.querySelector(".overlay");
     const openSun = document.querySelector("#sun-path>svg")
     const closeModalBtn = document.querySelector(".close-btn")
     const svg = document.querySelector("#svg-container")
-    // const upper = document.querySelector("#upper-text")
-    // const lower = document.querySelector("#lower-text")
+    const upper = document.querySelector("#upper-text")
+    const lower = document.querySelector("#lower-text")
 
     const openModal=function(){
         modal.classList.remove("hidden")
@@ -130,13 +134,64 @@ export function openSunModal(queryData){
         modal.classList.add("hidden")
         overlay.classList.add("hidden")
         svg.innerHTML = ""
+        upper.innerHTML = ""
+        lower.innerHTML = ""
     };
 
+    function createText(queryData){
+        const upperHead = document.createElement("p")
+        const upperTime = document.createElement("h1")
+        const lowerHead = document.createElement("p")
+        const lowerTime = document.createElement("h1")
+
+        
+
+        upperHead.innerText = "Sunrise was at"
+        upperTime.innerText = `${queryData.currentConditions.sunrise}`
+
+
+        upperTime.style.color = "black"
+        upperTime.style.border = "5px solid #ff0660"
+        upperTime.style.borderRadius = "20px"
+        upperTime.style.background = "#ff0660"
+        upperTime.style.boxShadow = "0px 0px 30px 20px #ff0660"
+
+        upper.append(upperHead)
+        upper.append(upperTime)
+
+        // lowerHead.innerText = "TESTING "
+        // lowerTime.innerText = "TEST"
+
+        if(currentSeconds > sunsetSeconds){
+            lowerHead.innerText = "Sunset was at"
+        }else{
+            lowerHead.innerText = "Sunset is at"
+        }
+
+        lowerTime.innerText = `${queryData.currentConditions.sunset}`
+
+        lowerTime.style.color = "#416fec"
+        lowerTime.style.border = "5px solid #416fec"
+        lowerTime.style.borderRadius = "20px"
+        lowerTime.style.background = "black"
+        lowerTime.style.boxShadow = "0px 0px 30px 20px #416fec"
+
+        
+
+        lower.append(lowerHead)
+        lower.append(lowerTime)
+        
+    }
+
+    function onOpen(){
+        drawSun(queryData,600,30,"5px","white","#svg-container")
+        createText(queryData)
+    }
 
   
 
     openSun.addEventListener("click",openModal)
-    openSun.addEventListener("click",()=>drawSun(queryData,600,30,"5px","white","#svg-container"))  
+    openSun.addEventListener("click",onOpen)  
     closeModalBtn.addEventListener("click",closeModal)
 }
 
