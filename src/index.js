@@ -7,20 +7,15 @@ import { fetchData,getData } from "./scripts/data";
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    // console.log("Hello world!")
-    // drawSun()
-    // drawSeasons()
-    // drawMoon()
-
-
+   
     (async () => {
         await getData()
         // console.log("hello")
-        drawSun(fetchData);
-        drawMoon(fetchData);
-        drawSeasons(fetchData);
+        drawSun(fetchData,200,10,"5px","black","#sun-path");
+        drawMoon(fetchData,450,"30px","black","#moons");
+        drawSeasons(fetchData,600,40,"20px","black","#seasons");
         openSunModal(fetchData);
-        openMoonModal(fetchData)
+        openMoonModal(fetchData);
         openSeasonsModal(fetchData);
 
         

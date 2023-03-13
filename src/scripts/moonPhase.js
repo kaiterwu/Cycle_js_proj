@@ -2,17 +2,17 @@
 import { moonPhases } from "./timeConvert";
 
 
-export function drawMoon(queryData){
+export function drawMoon(queryData,diameter,stroke,strokeColor,id){
 
-    const width = 450,
-        height = 450,
+    const width = diameter,
+        height = diameter,
         margin = 20;
 
 
     const radius = Math.min(width, height) / 2 - margin
 
 
-    const svg = d3.select("#moons")
+    const svg = d3.select(id)
     .append("svg")
         .attr("width", width)
         .attr("height", height)
@@ -55,8 +55,8 @@ export function drawMoon(queryData){
         .transition().delay(function(d, i) { return i/8 * 1000; })
         .duration(1000)
     .style('fill', d => color(d.data[0]))
-    .attr("stroke", "black")
-    .style("stroke-width", "30px")
+    .attr("stroke", strokeColor)        //"black"
+    .style("stroke-width",stroke )    //"30px"
     .style("opacity", 1)
 
 
@@ -79,79 +79,6 @@ export function drawMoon(queryData){
 }
 
 export function openMoonModal(queryData){
-
-     function drawMoonModal(queryData){
-
-        const width = 600,
-            height = 600,
-            margin = 20;
-    
-    
-        const radius = Math.min(width, height) / 2 - margin
-    
-    
-        const svg = d3.select("#svg-container")
-        .append("svg")
-            .attr("width", width)
-            .attr("height", height)
-        .append("g")
-            .attr("transform", `translate(${width / 2},${height / 2})`);
-        
-        
-    
-        // data object
-        const data = {"🌑":8,"🌒":8,"🌓":8,"🌔":8,"🌕":8,"🌖":8,"🌗":8,"🌘":8}
-        
-    
-        // set color
-        const color = d3.scaleOrdinal()
-        // .range(["#ffffff","#000000","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"])
-        //dynamic color
-        .range(moonPhases(queryData))
-        
-    
-        // Compute the position of each group on the pie:
-        const pie = d3.pie()
-        .value(d=>d[1])
-        .sort(null)
-    
-        const arc =  d3.arc()
-        .innerRadius(radius-80)
-        .outerRadius(radius);
-        
-            
-    
-    
-        const data_ready = pie(Object.entries(data))
-    
-        // compose chart, each part of the pie is a path that we build using arc function.
-        svg
-        .selectAll('slice')
-        .data(data_ready)
-        .join('path')
-        .attr('d', arc)
-            .transition().delay(function(d, i) { return i/8 * 1000; })
-            .duration(1000)
-        .style('fill', d => color(d.data[0]))
-        .attr("stroke", "black")
-        .style("stroke-width", "30px")
-        .style("opacity", 1)
-    
-    
-        //logic for annotating moons
-    
-        svg
-      .selectAll('slices')
-      .data(data_ready)
-      .join('text')
-      .text(function(d){return d.data[0]})
-      .transition()
-      .duration(2000)
-      .attr("transform", function(d) { return `translate(${arc.centroid(d)})`})
-      
-      .style("text-anchor", "middle")
-     }
-
     const modal = document.querySelector(".astro-modal");
     const overlay = document.querySelector(".overlay");
     const openMoon = document.querySelector("#moons>svg")
@@ -171,7 +98,7 @@ export function openMoonModal(queryData){
   
 
     openMoon.addEventListener("click",openModal)
-    openMoon.addEventListener("click",()=>drawMoonModal(queryData))
+    openMoon.addEventListener("click",()=>drawMoon(queryData,600,"30px","black","#svg-container"))
     closeModalBtn.addEventListener("click",closeModal)
 
 
