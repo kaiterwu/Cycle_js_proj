@@ -166,12 +166,12 @@ export function openMoonModal(queryData){
     const closeModal = function(){
         modal.classList.add("hidden")
         overlay.classList.add("hidden")
-        // svg.innerHTML = ""
+        svg.innerHTML = ""
     }
   
 
     openMoon.addEventListener("click",openModal)
-    // openMoon.addEventListener("click",drawMoonModal(queryData))
+    openMoon.addEventListener("click",()=>drawMoonModal(queryData))
     closeModalBtn.addEventListener("click",closeModal)
 
 

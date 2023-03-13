@@ -13,8 +13,7 @@
     z-index: 1000;
 }
 .astro-modal
-{animation:opac 0.8s}@keyframes opac{from{opacity:0} to{opacity:1}}
-//taken from w3 modal animation page 
+{animation:opac 1.5s}@keyframes opac{from{opacity:0} to{opacity:1}}
 
 #svg-container{
     width:600px;
@@ -27,14 +26,28 @@
     height: inherit;
     width: 400px;
     justify-content: space-between;
+    align-items: flex-end;
 
 }
 
 .close-btn{
-    // width: 30;
+    font-size: 20px;
+    color: white;
+    padding:10px 10px;
+    background-color: black;
+    box-shadow: 0px 5px 20px   rgba(255, 255, 255, 0.4);
+    border: double 10px white;
+    border-radius: 20px;
+    margin:5px;
+    width:200px;
+    
+}
+.close-btn:hover{
+    background-color: grey;
 }
 
 #upper-text,#lower-text{
+    
     display:flex;
     flex-direction: column;
     width: inherit;

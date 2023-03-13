@@ -49,7 +49,7 @@ export function drawSun(queryData){
         if (currentSeconds > sunriseSeconds){
            return  currentSeconds - sunriseSeconds
         }else if (currentSeconds < sunsetSeconds){
-            return  totalTime - sunsetSeconds + currentSeconds
+            return  totalTime +currentSeconds-sunriseSeconds 
         }
     }
 
@@ -163,10 +163,10 @@ export function openSunModal(queryData){
         }
     
         function timeElapse(currentSeconds,sunriseSeconds,sunsetSeconds){
-            if (currentSeconds > sunriseSeconds){
+            if (currentSeconds > sunriseSeconds && currentSeconds < sunsetSeconds){
                return  currentSeconds - sunriseSeconds
-            }else if (currentSeconds < sunsetSeconds){
-                return  totalTime - sunsetSeconds + currentSeconds
+            }else{
+                return  totalTime +currentSeconds-sunriseSeconds
             }
         }
     
@@ -231,14 +231,14 @@ export function openSunModal(queryData){
     const closeModal = function(){
         modal.classList.add("hidden")
         overlay.classList.add("hidden")
-        // svg.innerHTML = ""
+        svg.innerHTML = ""
     };
 
 
   
 
     openSun.addEventListener("click",openModal)
-    openSun.addEventListener("click",drawSunModal(queryData))
+    openSun.addEventListener("click",()=>drawSunModal(queryData))  
     closeModalBtn.addEventListener("click",closeModal)
 }
 

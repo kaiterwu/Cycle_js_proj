@@ -11,17 +11,22 @@ document.addEventListener("DOMContentLoaded", () => {
     // drawSun()
     // drawSeasons()
     // drawMoon()
+
+
     (async () => {
         await getData()
+        // console.log("hello")
         drawSun(fetchData);
         drawMoon(fetchData);
         drawSeasons(fetchData);
         openSunModal(fetchData);
         openMoonModal(fetchData)
-        openSeasonsModal();
+        openSeasonsModal(fetchData);
 
         
     })();
+
+
     
     
     
