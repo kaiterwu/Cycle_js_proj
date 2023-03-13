@@ -1,7 +1,7 @@
 import Example from "./scripts/example";
-import {drawSun}  from "./scripts/sunmoves";
-import { drawSeasons } from "./scripts/seasons";
-import { drawMoon } from "./scripts/moonPhase";
+import {drawSun,openSunModal}  from "./scripts/sunmoves";
+import { drawSeasons,openSeasonsModal } from "./scripts/seasons";
+import { drawMoon,openMoonModal } from "./scripts/moonPhase";
 import { fetchData,getData } from "./scripts/data";
 
 
@@ -12,17 +12,20 @@ document.addEventListener("DOMContentLoaded", () => {
     // drawSeasons()
     // drawMoon()
     (async () => {
-        await getData();
+        await getData()
         drawSun(fetchData);
         drawMoon(fetchData);
         drawSeasons(fetchData);
+        openSunModal()
+        openMoonModal()
+        openSeasonsModal()
+
+        
     })();
     
     
-    //silence this code before running webpack before changes to prevent extra queries 
-
-    // getCurrentData()
-
+    
+    
     
 
 });

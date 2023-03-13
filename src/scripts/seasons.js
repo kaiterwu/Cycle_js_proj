@@ -123,3 +123,24 @@ export function drawSeasons(queryData){
 
 
 }
+
+export function openSeasonsModal(){
+    const modal = document.querySelector(".astro-modal");
+    const overlay = document.querySelector(".overlay");
+    const openSun = document.querySelector("#seasons>svg")
+    const closeModalBtn = document.querySelector(".close-btn")
+
+    const openModal=function(){
+        modal.classList.remove("hidden")
+        overlay.classList.remove("hidden")
+    };
+
+    const closeModal = function(){
+        modal.classList.add("hidden")
+        overlay.classList.add("hidden")
+    }
+  
+
+    openSun.addEventListener("click",openModal)
+    closeModalBtn.addEventListener("click",closeModal)
+}
