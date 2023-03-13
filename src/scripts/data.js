@@ -12,7 +12,12 @@ export const getData = async function getCurrentData() {
     
     try {
       //  const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${zip}/${now}?key=${apiKey}`);
-         const response = await fetch(`../project_docs/2023-03-12.json`);
+        //day/spring
+        //  const response = await fetch(`../project_docs/2023-03-12.json`);
+         //night/winter
+         const response = await fetch(`../project_docs/night_data.json`)
+        // const response = await fetch(`../project_docs/summer.json`)
+        // const response = await fetch(`../project_docs/fall.json`)
        if (response.ok) {
           const data = await response.json();
          //  drawSun(data)

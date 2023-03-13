@@ -86,15 +86,18 @@ export function openMoonModal(queryData){
     const svg = document.querySelector("#svg-container")
     const upper = document.querySelector("#upper-text")
     const lower = document.querySelector("#lower-text")
+    const background = document.querySelector(".moon_background")
 
     const openModal=function(){
         modal.classList.remove("hidden")
         overlay.classList.remove("hidden")
+        background.classList.remove("hidden")
     };
 
     const closeModal = function(){
         modal.classList.add("hidden")
         overlay.classList.add("hidden")
+        background.classList.add("hidden")
         svg.innerHTML = ""
     }
 
@@ -103,6 +106,7 @@ export function openMoonModal(queryData){
         const upperPhase = document.createElement("h1")
         const lowerHead = document.createElement("p")
         const lowerPhase = document.createElement("h1")
+        const moonImg = document.createElement("img")
         const phases = ["New","Waxing Crescent","First Quarter","Waxing Gibbous",
                         "Full","Waning Gibbous","Last Quarter","Waning Crescent"]
         
@@ -118,6 +122,33 @@ export function openMoonModal(queryData){
             lowerPhase.innerText = phases[currentIndex+1]
         }else{
             lowerPhase.innerText = phases[0]
+        }
+
+        switch(currentPhase){
+            case "New":
+                moonImg.src = '../../images/moons/new_moon.png'
+                break;
+            case "Waxing Crescent":
+                moonImg.src = '../../images/moons/waxing_crescent.png'
+                break;
+            case "First Quarter":
+                moonImg.src = '../../images/moons/first_quarter.png'
+                break;
+            case "Waxing Gibbous":
+                moonImg.src = '../../images/moons/waxing_gibbous.png'
+                break;
+            case "Full":
+                moonImg.src = '../../images/moons/Full_moon.png'
+                break;
+            case "Waning Gibbous":
+                moonImg.src = '../../images/moons/waning_gibbous.png'
+                break;
+            case "Last Quarter":
+                moonImg.src = '../../images/moons/last_quarter.png'
+                break;
+            case "Waning Crescent":
+                moonImg.src = '../../images/moons/waning_crescent.png'
+                break;
         }
 
         upperPhase.style.fontSize = "60px"
@@ -137,10 +168,15 @@ export function openMoonModal(queryData){
         lowerPhase.style.color = "black"
         lowerPhase.style.boxShadow = "0px 0px 60px 20px rgba(255, 255, 255, 0.4) "
 
+        moonImg.style.width = "350"
+        moonImg.style.height = "350"
+        moonImg.style.zIndex = "10"
+
         upper.append(upperHead)
         upper.append(upperPhase)
         lower.append(lowerHead)
         lower.append(lowerPhase)
+        svg.append(moonImg)
         
 
     }

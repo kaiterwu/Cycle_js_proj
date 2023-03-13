@@ -143,6 +143,7 @@ export function openSunModal(queryData){
         const upperTime = document.createElement("h1")
         const lowerHead = document.createElement("p")
         const lowerTime = document.createElement("h1")
+        const dayImg = document.createElement("img")
 
         
 
@@ -164,8 +165,10 @@ export function openSunModal(queryData){
 
         if(currentSeconds > sunsetSeconds){
             lowerHead.innerText = "Sunset was at"
+            dayImg.src = '../../images/days/moon.png'
         }else{
             lowerHead.innerText = "Sunset is at"
+            dayImg.src = '../../images/days/sun2.png'
         }
 
         lowerTime.innerText = `${queryData.currentConditions.sunset}`
@@ -180,7 +183,7 @@ export function openSunModal(queryData){
 
         lower.append(lowerHead)
         lower.append(lowerTime)
-        
+        svg.append(dayImg)
     }
 
     function onOpen(){

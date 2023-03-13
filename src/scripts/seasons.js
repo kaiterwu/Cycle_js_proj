@@ -22,6 +22,7 @@ export function drawSeasons(queryData,diameter,inner,stroke,strokeColor,id){
 
     //dynamic data 
     let currentDay = currentDays(queryData.days[0].datetime)
+    console.log(currentDay)
     const year = parseInt(queryData.days[0].datetime.slice(0,4))
 
     function winterTime(currentDay){
@@ -152,6 +153,7 @@ export function openSeasonsModal(queryData){
         const upperSeason = document.createElement("h1")
         const lowerHead = document.createElement("p")
         const lowerSeason = document.createElement("h1")
+        const seasonImg = document.createElement("img")
 
         let currentDay = currentDays(queryData.days[0].datetime) -1
         //90,92,92,91 ---- 90,181,273,364(365 === 1)
@@ -165,20 +167,24 @@ export function openSeasonsModal(queryData){
             following = 90 - currentDay
             currentSeason = "Winter"
             nextSeason = "Spring"
+            seasonImg.src = '../../images/seasons/winter.png'
         }else if(currentDay > 90 && currentDay <= 181){
             currently = currentDay-90 
             following = 182 - currentDay
             currentSeason = "Spring"
             nextSeason = "Summer"
+            seasonImg.src = '../../images/seasons/spring.png'
         }else if (currentDay >182 && currentDay <= 273){
             currently = currentDay - 182 
             following = 273 - currentDay
             currentSeason = "Summer"
             nextSeason = "Fall"
+            seasonImg.src = '../../images/seasons/summer.png'
         }else {currently = currentDay-273
                 following = 365 - currentDay
                 currentSeason = "Fall"
                 nextSeason = "Winter"
+                seasonImg.src = '../../images/seasons/autumn.png'
         }
     
        
@@ -217,10 +223,14 @@ export function openSeasonsModal(queryData){
         lowerSeason.style.color = "black"
         lowerSeason.style.boxShadow = `0px 0px 30px 10px ${nextColor} `
 
+        seasonImg.style.width = "350px"
+        seasonImg.style.height = "350px"
+
         upper.append(upperHead)
         upper.append(upperSeason)
         lower.append(lowerHead)
         lower.append(lowerSeason)
+        svg.append(seasonImg)
         
 
     }

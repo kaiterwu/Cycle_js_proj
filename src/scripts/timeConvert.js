@@ -21,6 +21,8 @@ export function currentDays(str){
    let parsedDay = parseInt(str.slice(8))
    if (parsedMonth === 12){
       return parsedDay
+   }else if (parsedMonth ===1){
+    return 61 + parsedDay
    }
 
    if(parsedDay%4===0){return sumLeap[parsedMonth-2]+parsedDay+31}
