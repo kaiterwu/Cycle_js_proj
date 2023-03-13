@@ -137,6 +137,7 @@ img .moon_background {
   color: white;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   text-align: center;
+  text-shadow: 1px 1px 5px white;
 }
 
 #info-text h1 {
@@ -193,6 +194,36 @@ img .moon_background {
   width: 350px;
   height: 350px;
   z-index: 9;
+}
+
+#header {
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+  justify-content: center;
+}
+
+#date, #clock, #menubuttons {
+  height: inherit;
+  text-shadow: 1px 1px 20px white;
+}
+
+#date, #clock {
+  width: 400px;
+  border-right: inherit;
+  box-shadow: inherit;
+}
+
+#menubuttons {
+  width: 200px;
+}
+
+#date, #clock {
+  color: white;
+  font-size: 60px;
+  text-align: center;
+  font-family: "Space Mono", monospace;
+  line-height: 90px;
 }
 
 body {

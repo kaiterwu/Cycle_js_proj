@@ -215,13 +215,16 @@ export function openSeasonsModal(queryData){
         upperSeason.style.borderRadius = "20px"
         upperSeason.style.background = "black"
         upperSeason.style.boxShadow = `0px 0px 30px 10px ${currentColor} `
-        upperSeason.style.padding = "15px"
+        upperSeason.style.padding = "10px"
+        upperSeason.style.textShadow = `1px 1px 5px ${currentColor} `
 
         lowerSeason.style.border = `10px solid ${nextColor}`
         lowerSeason.style.borderRadius = "20px"
         lowerSeason.style.background = nextColor
         lowerSeason.style.color = "black"
         lowerSeason.style.boxShadow = `0px 0px 30px 10px ${nextColor} `
+        lowerSeason.style.padding = '10px'
+        lowerSeason.style.textShadow = "1px 1px 5px black "
 
         seasonImg.style.width = "350px"
         seasonImg.style.height = "350px"

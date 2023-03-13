@@ -160,6 +160,7 @@ export function openMoonModal(queryData){
         upperPhase.style.background = "black"
         upperPhase.style.color = "white"
         upperPhase.style.boxShadow = "0px 0px 60px 20px rgba(255, 255, 255, 0.4) "
+        upperPhase.style.textShadow = "1px 1px 10px white "
 
         lowerPhase.style.fontStyle = "italic"
         lowerPhase.style.border = "10px solid white"
@@ -167,6 +168,8 @@ export function openMoonModal(queryData){
         lowerPhase.style.background = "white"
         lowerPhase.style.color = "black"
         lowerPhase.style.boxShadow = "0px 0px 60px 20px rgba(255, 255, 255, 0.4) "
+        lowerPhase.style.textShadow = "1px 1px 5px black "
+
 
         moonImg.style.width = "350"
         moonImg.style.height = "350"

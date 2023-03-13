@@ -120,6 +120,29 @@ export function moonPhaseName(data){
 
 }
 
+export function getDate(data){
+    let dataDate = data.days[0].datetime
+    const currentDate = document.querySelector('#date')
+    currentDate.innerText = dataDate
+
+}
+
+export function getTime(data){ // need to add logic whether this is for current date or not 
+    let dataTime = data.currentConditions.datetime
+    let splicedTime = dataTime.slice(0,2)
+    const currentTime = document.querySelector('#clock')
+    const splicedMinutes = msNow()
+
+    currentTime.innerText = splicedTime+ ':' + splicedMinutes
+}
+
+ function timeNow(){
+    let time = new Date().toISOString()
+
+    
+   
+}
+
   
 
 

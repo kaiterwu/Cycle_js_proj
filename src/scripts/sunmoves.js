@@ -155,7 +155,8 @@ export function openSunModal(queryData){
         upperTime.style.border = "5px solid #ff0660"
         upperTime.style.borderRadius = "20px"
         upperTime.style.background = "#ff0660"
-        upperTime.style.boxShadow = "0px 0px 30px 20px #ff0660"
+        upperTime.style.boxShadow = "0px 0px 20px 20px #ff0660"
+        upperTime.style.textShadow = "1px 1px 5px black"
 
         upper.append(upperHead)
         upper.append(upperTime)
@@ -177,7 +178,8 @@ export function openSunModal(queryData){
         lowerTime.style.border = "5px solid #416fec"
         lowerTime.style.borderRadius = "20px"
         lowerTime.style.background = "black"
-        lowerTime.style.boxShadow = "0px 0px 30px 20px #416fec"
+        lowerTime.style.boxShadow = "0px 0px 20px 20px #416fec"
+        lowerTime.style.textShadow = "1px 1px 10px #416fec"
 
         
 
