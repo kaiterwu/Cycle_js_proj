@@ -16,9 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
         drawSun(fetchData);
         drawMoon(fetchData);
         drawSeasons(fetchData);
-        openSunModal()
-        openMoonModal()
-        openSeasonsModal()
+        openSunModal(fetchData);
+        openMoonModal(fetchData)
+        openSeasonsModal();
 
         
     })();

@@ -83,6 +83,10 @@ table {
     opacity: 1;
   }
 }
+#svg-container {
+  width: 600px;
+}
+
 #info-text {
   display: flex;
   flex-direction: column;

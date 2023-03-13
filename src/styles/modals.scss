@@ -16,6 +16,10 @@
 {animation:opac 0.8s}@keyframes opac{from{opacity:0} to{opacity:1}}
 //taken from w3 modal animation page 
 
+#svg-container{
+    width:600px;
+}
+
 
 #info-text{
     display: flex;
