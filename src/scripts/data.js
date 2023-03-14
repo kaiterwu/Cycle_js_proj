@@ -48,7 +48,7 @@ export async function getCurrentData(zipcode) {
   export async function getPastData(zipcode,date,dayTime) {
     
     try {
-       const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${zipcode}/${now}?key=${apiKey}`);
+       const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${zipcode}/${date}T${dayTime}?key=${apiKey}&include=current`);
         //day/spring
         //  const response = await fetch(`../project_docs/2023-03-12.json`);
         //  night/winter
@@ -66,7 +66,7 @@ export async function getCurrentData(zipcode) {
           openMoonModal(data);
           openSeasonsModal(data);
           getlocation(data)
-          callclock()
+          // callclock()
          
           console.log(data)
         //  fetchData = data
