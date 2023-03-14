@@ -127,21 +127,50 @@ export function getDate(data){
 
 }
 
-export function getTime(data){ // need to add logic whether this is for current date or not 
-    let dataTime = data.currentConditions.datetime
-    let splicedTime = dataTime.slice(0,2)
-    const currentTime = document.querySelector('#clock')
-    const splicedMinutes = msNow()
+// export function getTime(data){ // need to add logic whether this is for current date or not 
+//     let dataTime = data.currentConditions.datetime
+//     let splicedTime = dataTime.slice(0,2)
+//     const currentTime = document.querySelector('#clock')
+//     const splicedMinutes = msNow()
 
-    currentTime.innerText = splicedTime+ ':' + splicedMinutes
-}
+//     currentTime.innerText = splicedTime+ ':' + splicedMinutes
+// }
 
- function timeNow(){
-    let time = new Date().toISOString()
+//  function timeNow(){
+//     let time = new Date().toISOString()
 
-    
+
    
+// }
+
+export function getTime(data){
+    let dataTime = data.currentConditions.datetime
+
+    let timeNow = document.querySelector('#clock')
+    timeNow.append(dataTime)
 }
+export function callclock(){
+    function realClock() {
+        let date = new Date(); 
+        let hours = date.getHours();
+        let mins = date.getMinutes();
+        let secs = date.getSeconds();
+       
+      
+         hours = (hours < 10) ? "0" + hours : hours;
+         mins = (mins < 10) ? "0" + mins : mins;
+         secs = (secs < 10) ? "0" + secs : secs;
+          
+         let time = hours + ":" + mins + ":" + secs;
+      
+        document.querySelector("#clock").innerText = time; 
+        let t = setTimeout(function(){ realClock() }, 1000); 
+        
+      }
+      
+      realClock();
+    }
+
 
   
 
