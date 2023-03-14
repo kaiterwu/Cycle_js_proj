@@ -22,7 +22,7 @@
       <div id = "introduction">Welcome to Cycle. This is a webpage designed to 
         show a user realtime astronomical and weather data. Each circle is an interactable element 
         that will show you more information after being selected. Note that selecting historical data will default 
-        the time of that day to 9:00 AM. 
+        the time of that day to 9:00 AM. Clock display is based on system time. 
         Enjoy, and please begin by entering your zipcode below! 
       </div>
       <input type = number id = zipcode placeholder = "Zipcode">
@@ -58,6 +58,7 @@
       </div>
       <div id= "view">
       <div class = "astro-data">
+        <div id = "location"></div>
         <div id = "seasons"></div>
         <div id = "moons"></div>
         <div id = "sun-path"></div>

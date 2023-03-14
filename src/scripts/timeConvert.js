@@ -171,7 +171,9 @@ export function callclock(){
       realClock();
     }
 
-
+function getlocation(data){
+    
+}
   
 
 
