@@ -31,7 +31,7 @@
     z-index: 1000;
 }
 .intro-modal
-{animation:opac 1s}@keyframes opac{from{opacity:0} to{opacity:1}}
+{animation:opac 0.25s}@keyframes opac{from{opacity:0} to{opacity:1}}
 
 #zipcode{
     border: inherit;
@@ -65,7 +65,8 @@
     
 }
 
-#start:hover,#date-button:hover {
+#start:hover,#date-button:hover, #closeSelect:hover, #enterInputs:hover, 
+#selectZip:hover,#input-date {
     background-color: white;
     border-color: black;
     color:black;

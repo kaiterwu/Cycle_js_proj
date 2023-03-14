@@ -5,10 +5,13 @@ import { drawMoon,openMoonModal } from "./scripts/moonPhase";
 import { fetchData,getData,getClock, getCurrentData } from "./scripts/data";
 import { getDate,callclock } from "./scripts/timeConvert";
 import { openIntroModal } from "./scripts/intro_modal";
+import { openSelectModal } from "./scripts/select_modal";
 
 
 document.addEventListener("DOMContentLoaded", () => {
-   
+    
+    openIntroModal()
+    openSelectModal()
     // (async () => {
     //     await getData()
     //     // console.log("hello")
@@ -23,21 +26,34 @@ document.addEventListener("DOMContentLoaded", () => {
     //     callclock()
         
     // })();
-        let myZipcode;
+        // let myZipcode;
 
-        function getZip(){
-            myZipcode = document.querySelector('#zipcode').value
-        }
-    
-        openIntroModal()
-        const start = document.querySelector('#start')
+        // function getZip(){
+        //     myZipcode = document.querySelector('#zipcode').value
+        //     getCurrentData(myZipcode)
+        // }
 
-        start.addEventListener("click",getZip)
-        start.addEventListener("click",()=>getCurrentData(myZipcode))
-        // start.addEventListener("click",()=>console.log(myZipcode))
+        // function getSelectValues(){
+        //     // myNewZip = document.querySelector("#selectZip").value
+        //     myNewDate = document.querySelector("#input-date").value 
+        //     //have to reformat output of date input to match YYYY-MM-DD
+        //     //logic to get day/night from radio buttons??
+
+
+        // }
+
+
     
- 
-    // callclock();
+        
+        // const start = document.querySelector('#start')
+        // start.addEventListener("click",getZip)
+        // // start.addEventListener("click",()=>getCurrentData(myZipcode))
+
+        
+        
+        
+        
+
   
    
     
