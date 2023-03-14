@@ -94,7 +94,7 @@ table {
 }
 
 .intro-modal {
-  animation: opac 3s;
+  animation: opac 1s;
 }
 
 @keyframes opac {
