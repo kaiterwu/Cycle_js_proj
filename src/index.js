@@ -4,7 +4,7 @@ import { drawSeasons,openSeasonsModal } from "./scripts/seasons";
 import { drawMoon,openMoonModal } from "./scripts/moonPhase";
 import { fetchData,getData,getClock, getCurrentData } from "./scripts/data";
 import { getDate,callclock } from "./scripts/timeConvert";
-
+import { openIntroModal } from "./scripts/intro_modal";
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -23,10 +23,22 @@ document.addEventListener("DOMContentLoaded", () => {
     //     callclock()
         
     // })();
+        let myZipcode;
 
-    getCurrentData()
+        function getZip(){
+            myZipcode = document.querySelector('#zipcode').value
+        }
+    
+        openIntroModal()
+        const start = document.querySelector('#start')
+
+        start.addEventListener("click",getZip)
+        start.addEventListener("click",()=>getCurrentData(myZipcode))
+        // start.addEventListener("click",()=>console.log(myZipcode))
+    
+ 
     // callclock();
-    callclock();
+  
    
     
     

@@ -18,6 +18,16 @@
  
 
   <body>
+    <section class = "intro-modal">
+      <div id = "introduction">Welcome to Cycle. This is a webpage designed to 
+        show a user realtime astronomical and weather data. Each circle is an interactable element 
+        that will show you more information after being selected. Note that selecting historical data will default 
+        the time of that day to 9:00 AM. 
+        Enjoy, and please begin by entering your zipcode below! 
+      </div>
+      <input type = number id = zipcode placeholder = "Zipcode">
+      <button id = "start">Start</button>
+    </section>
     <section class="astro-modal hidden">
       <div id = img-container>
       <div class = "moon_background hidden"></div>
@@ -37,7 +47,7 @@
         <button class = "close-btn">←</button>
       </div>
     </section>
-    <div class="overlay hidden"></div>
+    <div class="overlay "></div>
 
     <div id = "background">
       <div id = "header">

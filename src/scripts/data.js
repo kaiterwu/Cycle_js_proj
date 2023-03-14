@@ -7,17 +7,17 @@ import { drawSeasons,openSeasonsModal } from "./seasons";
 
 
 const apiKey = "4P48W2KCWFQAQ6SJ99K5H2VBM"
-const zip = "11040"
+// const zip = "11040"
 const now = Math.floor(Date.now()/1000)
 
 // export let fetchData;
 
-export async function getCurrentData() {
+export async function getCurrentData(zipcode) {
     
     try {
-      //  const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${zip}/${now}?key=${apiKey}`);
+       const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${zipcode}/${now}?key=${apiKey}`);
         //day/spring
-         const response = await fetch(`../project_docs/2023-03-12.json`);
+        //  const response = await fetch(`../project_docs/2023-03-12.json`);
         //  night/winter
         //  const response = await fetch(`../project_docs/night_data.json`)
         // const response = await fetch(`../project_docs/summer.json`)
@@ -32,7 +32,7 @@ export async function getCurrentData() {
           openSunModal(data);
           openMoonModal(data);
           openSeasonsModal(data);
-          
+          callclock()
          
           console.log(data)
         //  fetchData = data

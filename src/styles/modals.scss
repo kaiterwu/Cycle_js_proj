@@ -15,7 +15,73 @@
 .astro-modal, #info-text h1,p
 {animation:opac 1.5s}@keyframes opac{from{opacity:0} to{opacity:1}}
 
+.intro-modal{
+    border: double 10px white;
+    border-radius: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width:600px;
+    height: 600px;
+    background-color: black;
+    box-shadow: 0px 5px 20px   rgba(255, 255, 255, 0.4);
+    position:absolute;
+    // top:22.5%;
+    z-index: 1000;
+}
+.intro-modal
+{animation:opac 3s}@keyframes opac{from{opacity:0} to{opacity:1}}
 
+#zipcode{
+    border: inherit;
+    border-radius:20px;
+    width: 200px;
+    height: 50px;
+    background-color: black;
+    color:white;
+    box-shadow: inherit;
+    margin:10px;
+    font-size:30px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-shadow: 1px 1px 5px white;
+    text-align: center;
+    
+}
+
+
+#start{
+    border: inherit;
+    border-radius:20px;
+    width: 150px;
+    height: 75px;
+    background-color: black;
+    color:white;
+    box-shadow: inherit;
+    margin:10px;
+    font-size:30px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-shadow: 1px 1px 5px white;
+    
+}
+
+#start:hover{
+    background-color: white;
+    border-color: black;
+    color:black;
+}
+
+#introduction{
+    // margin-top:10%;
+   height:30%;
+    font-size: 20px;
+    color:white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align:left;
+    text-shadow: 1px 1px 5px white;
+    padding:15%;
+    line-height: 35px;
+}
 
 #svg-container{
     width:600px;
@@ -46,7 +112,7 @@
     z-index: -1;
     
 }
-img .moon_background
+img .moon_background,.intro-modal
     {animation:opac 5s}@keyframes opac{from{opacity:0} to{opacity:1}}
 
 
