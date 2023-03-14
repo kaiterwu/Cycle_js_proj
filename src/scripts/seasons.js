@@ -167,24 +167,24 @@ export function openSeasonsModal(queryData){
             following = 90 - currentDay
             currentSeason = "Winter"
             nextSeason = "Spring"
-            seasonImg.src = '../../images/seasons/winter.png'
+            seasonImg.src = 'images/seasons/winter.png'
         }else if(currentDay > 90 && currentDay <= 181){
             currently = currentDay-90 
             following = 182 - currentDay
             currentSeason = "Spring"
             nextSeason = "Summer"
-            seasonImg.src = '../../images/seasons/spring.png'
+            seasonImg.src = 'images/seasons/spring.png'
         }else if (currentDay >182 && currentDay <= 273){
             currently = currentDay - 182 
             following = 273 - currentDay
             currentSeason = "Summer"
             nextSeason = "Fall"
-            seasonImg.src = '../../images/seasons/summer.png'
+            seasonImg.src = 'images/seasons/summer.png'
         }else {currently = currentDay-273
                 following = 365 - currentDay
                 currentSeason = "Fall"
                 nextSeason = "Winter"
-                seasonImg.src = '../../images/seasons/autumn.png'
+                seasonImg.src = '.images/seasons/autumn.png'
         }
     
        

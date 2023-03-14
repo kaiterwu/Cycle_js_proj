@@ -126,28 +126,28 @@ export function openMoonModal(queryData){
 
         switch(currentPhase){
             case "New":
-                moonImg.src = '../../images/moons/new_moon.png'
+                moonImg.src = 'images/moons/new_moon.png'
                 break;
             case "Waxing Crescent":
-                moonImg.src = '../../images/moons/waxing_crescent.png'
+                moonImg.src = 'images/moons/waxing_crescent.png'
                 break;
             case "First Quarter":
-                moonImg.src = '../../images/moons/first_quarter.png'
+                moonImg.src = 'images/moons/first_quarter.png'
                 break;
             case "Waxing Gibbous":
-                moonImg.src = '../../images/moons/waxing_gibbous.png'
+                moonImg.src = 'images/moons/waxing_gibbous.png'
                 break;
             case "Full":
-                moonImg.src = '../../images/moons/Full_moon.png'
+                moonImg.src = 'images/moons/Full_moon.png'
                 break;
             case "Waning Gibbous":
-                moonImg.src = '../../images/moons/waning_gibbous.png'
+                moonImg.src = 'images/moons/waning_gibbous.png'
                 break;
             case "Last Quarter":
-                moonImg.src = '../../images/moons/last_quarter.png'
+                moonImg.src = 'images/moons/last_quarter.png'
                 break;
             case "Waning Crescent":
-                moonImg.src = '../../images/moons/waning_crescent.png'
+                moonImg.src = 'images/moons/waxing_crescent.png'
                 break;
         }
 
@@ -169,6 +169,7 @@ export function openMoonModal(queryData){
         lowerPhase.style.color = "black"
         lowerPhase.style.boxShadow = "0px 0px 60px 20px rgba(255, 255, 255, 0.4) "
         lowerPhase.style.textShadow = "1px 1px 5px black "
+        lowerPhase.style.width = '80%'
 
 
         moonImg.style.width = "350"
