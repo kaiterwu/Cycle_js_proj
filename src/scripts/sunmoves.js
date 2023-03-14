@@ -166,10 +166,10 @@ export function openSunModal(queryData){
 
         if(currentSeconds > sunsetSeconds){
             lowerHead.innerText = "Sunset was at"
-            dayImg.src = '../../images/days/moon.png'
+            dayImg.src = 'images/days/moon.png'
         }else{
             lowerHead.innerText = "Sunset is at"
-            dayImg.src = '../../images/days/sun2.png'
+            dayImg.src = 'images/days/sun2.png'
         }
 
         lowerTime.innerText = `${queryData.currentConditions.sunset}`
