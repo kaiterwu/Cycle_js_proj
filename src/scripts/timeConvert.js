@@ -132,7 +132,7 @@ export function getTime(data){
     let dataTime = data.currentConditions.datetime
 
     let timeNow = document.querySelector('#clock')
-    timeNow.append(dataTime)
+    timeNow.innerText = dataTime
 }
 export function callclock(){
     function realClock() {
