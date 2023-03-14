@@ -22,7 +22,7 @@ export function drawSeasons(queryData,diameter,inner,stroke,strokeColor,id){
 
     //dynamic data 
     let currentDay = currentDays(queryData.days[0].datetime)
-    console.log(currentDay)
+    // console.log(currentDay)
     const year = parseInt(queryData.days[0].datetime.slice(0,4))
 
     function winterTime(currentDay){
@@ -155,7 +155,7 @@ export function openSeasonsModal(queryData){
         const lowerSeason = document.createElement("h1")
         const seasonImg = document.createElement("img")
 
-        let currentDay = currentDays(queryData.days[0].datetime) -1
+        let currentDay = currentDays(queryData.days[0].datetime) 
         //90,92,92,91 ---- 90,181,273,364(365 === 1)
         let currently;
         let following;
@@ -169,22 +169,25 @@ export function openSeasonsModal(queryData){
             nextSeason = "Spring"
             seasonImg.src = 'images/seasons/winter.png'
         }else if(currentDay > 90 && currentDay <= 181){
-            currently = currentDay-90 
-            following = 182 - currentDay
+            currently = currentDay-90
+            
+            following = 181 - currentDay
             currentSeason = "Spring"
             nextSeason = "Summer"
             seasonImg.src = 'images/seasons/spring.png'
         }else if (currentDay >182 && currentDay <= 273){
-            currently = currentDay - 182 
+            currently = currentDay - 182
             following = 273 - currentDay
             currentSeason = "Summer"
             nextSeason = "Fall"
             seasonImg.src = 'images/seasons/summer.png'
-        }else {currently = currentDay-273
+        }else {currently = currentDay-274
                 following = 365 - currentDay
+                console.log(currently)
+                console.log(currentDay)
                 currentSeason = "Fall"
                 nextSeason = "Winter"
-                seasonImg.src = '.images/seasons/autumn.png'
+                seasonImg.src = 'images/seasons/autumn.png'
         }
     
        

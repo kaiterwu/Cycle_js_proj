@@ -22,11 +22,11 @@ export function currentDays(str){
    if (parsedMonth === 12){
       return parsedDay
    }else if (parsedMonth ===1){
-    return 61 + parsedDay
+    return 31 + parsedDay
    }
 
-   if(parsedDay%4===0){return sumLeap[parsedMonth-2]+parsedDay+31}
-   else{return sumDays[parsedMonth-2]+parsedDay + 30}
+   if(parsedYear%4===0){return sumLeap[parsedMonth-2]+parsedDay+31}
+   else{return sumDays[parsedMonth-2]+parsedDay + 31}
 }
 
 export function moonPhases(data){
@@ -127,21 +127,6 @@ export function getDate(data){
 
 }
 
-// export function getTime(data){ // need to add logic whether this is for current date or not 
-//     let dataTime = data.currentConditions.datetime
-//     let splicedTime = dataTime.slice(0,2)
-//     const currentTime = document.querySelector('#clock')
-//     const splicedMinutes = msNow()
-
-//     currentTime.innerText = splicedTime+ ':' + splicedMinutes
-// }
-
-//  function timeNow(){
-//     let time = new Date().toISOString()
-
-
-   
-// }
 
 export function getTime(data){
     let dataTime = data.currentConditions.datetime
@@ -171,8 +156,20 @@ export function callclock(){
       realClock();
     }
 
-function getlocation(data){
-    
+export function getlocation(data){
+    let myLocation = data.timezone.split('/') 
+    let zip= data.resolvedAddress.split(',')[0]
+    let state = myLocation[1].split("_").join(" ")
+    let address = data.resolvedAddress.split(',')[1] 
+    + "\n" + state + "\n" + zip
+    // myLocation = myLocation.join(' ')
+    // document.querySelector("#location").append(myLocation.join(' '))
+    // document.querySelector("#location").append(zip)
+
+    document.querySelector("#location").append(address)
+   
+
+
 }
   
 

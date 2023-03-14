@@ -1,5 +1,5 @@
 // import {drawSun,openSunModal}  from "./scripts/sunmoves";
-import { getDate,callclock } from "./timeConvert";
+import { getDate,callclock,getlocation } from "./timeConvert";
 import { drawSun,openSunModal} from "./sunmoves";
 import { drawMoon,openMoonModal } from "./moonPhase";
 import { drawSeasons,openSeasonsModal } from "./seasons";
@@ -32,6 +32,7 @@ export async function getCurrentData(zipcode) {
           openSunModal(data);
           openMoonModal(data);
           openSeasonsModal(data);
+          getlocation(data)
           callclock()
          
           console.log(data)
