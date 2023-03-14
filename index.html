@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="./dist/main.css" />
     <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <script src="https://d3js.org/d3.v6.js"></script>
     <script src="./dist/main.js"></script>
     <title>Cycle</title>
@@ -22,7 +23,7 @@
       <div id = "introduction">Welcome to Cycle. This is a webpage designed to 
         show a user realtime astronomical and weather data. Each circle is an interactable element 
         that will show you more information after being selected. Note that selecting historical data will default 
-        the time of that day to 9:00 AM. Clock display is based on system time. 
+        the time of that day to 9:00 AM. Clock display is based on system time. Seasons utilize meteorological dates 
         Enjoy, and please begin by entering your zipcode below! 
       </div>
       <input type = number id = zipcode placeholder = "Zipcode">
@@ -53,7 +54,19 @@
       <div id = "header">
         <div id = "date"></div>
         <div id = "clock"></div>
-        <div id = "menubuttons"></div>
+        <div id = "menubuttons">
+          <div id = "links">
+            <a href="https://github.com/kaiterwu/Cycle_js_proj.git">
+              <i class = "fa fa-github fa-2x"> </i>
+            </a>
+            <a href =https://www.linkedin.com/in/kaiter-wu-7ba70a62>
+              <i class = "fa fa-linkedin-square fa-2x"></i>
+            </a>
+          </div>
+         
+            <button id = "date-button">Select Date</button>
+          
+        </div>
 
       </div>
       <div id= "view">
