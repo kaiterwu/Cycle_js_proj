@@ -1,4 +1,4 @@
-export function drawPrecip(queryData,diameter,inner,stroke,strokeColor,delay=0,id){
+ function drawPrecip(queryData,diameter,inner,stroke,strokeColor,delay=0,id){
     //set the dimensions and margins of the graph
     
     const width = diameter,
@@ -16,57 +16,16 @@ export function drawPrecip(queryData,diameter,inner,stroke,strokeColor,delay=0,i
     .append("g")
         .attr("transform", `translate(${width / 2},${height / 2})`);
     
-    // dynamic querydata , javascript time is in UTC, need to convert to EST 
-    // let currentSeconds = timeToSeconds(queryData.currentConditions.datetime)
-    // let sunriseSeconds = timeToSeconds(queryData.currentConditions.sunrise)
-    // let sunsetSeconds = timeToSeconds(queryData.currentConditions.sunset)
-    // const totalTime = 24*60*60;
+    const currentPrecip = queryData.days[0].precipprob
 
-    // function nightTime(currentSeconds,sunriseSeconds,sunsetSeconds){
-    //     if(currentSeconds > sunsetSeconds){
-    //         return totalTime - currentSeconds + sunriseSeconds
-    //     }else if (currentSeconds < sunriseSeconds){
-    //        return sunriseSeconds - currentSeconds
-    //     }
-    //      else{
-    //        return totalTime - sunsetSeconds + sunriseSeconds
-    //     }
-    // }
+    let left = currentPrecip
+    let right = 100 - currentPrecip
 
-    // function dayTime(currentSeconds,sunriseSeconds,sunsetSeconds){
-    //     if (currentSeconds >sunriseSeconds && currentSeconds < sunsetSeconds){
-    //         return  sunsetSeconds - currentSeconds
-    //     }else {
-    //         return 0 
-    //     }
-    // }
-
-    // function timeElapse(currentSeconds,sunriseSeconds,sunsetSeconds){
-    //     if (currentSeconds > sunriseSeconds){
-    //        return  currentSeconds - sunriseSeconds
-    //     }else if (currentSeconds < sunsetSeconds){
-    //         return  totalTime +currentSeconds-sunriseSeconds 
-    //     }
-    // }
-
-    // // console.log(currentSeconds);
-    // // console.log(sunriseSeconds);
-    // // console.log(sunsetSeconds);
-    // // console.log(nightTime(currentSeconds,sunriseSeconds,sunsetSeconds))
-    // // console.log(dayTime(currentSeconds,sunriseSeconds,sunsetSeconds))
-    // // console.log(timeElapse(currentSeconds,sunriseSeconds,sunsetSeconds))
-
-    // let nightSeconds = nightTime(currentSeconds,sunriseSeconds,sunsetSeconds)
-    // let daySeconds = dayTime(currentSeconds,sunriseSeconds,sunsetSeconds)
-    // let nowSeconds = timeElapse(currentSeconds,sunriseSeconds,sunsetSeconds)
-    
-    // //dynamic data 
-    // const data = {elapse:nowSeconds,day:daySeconds,night:nightSeconds}
-    const data = [1,1]
+    const data = {"🌧️":left,"":right}
 
     // set color
     const color = d3.scaleOrdinal()
-    .range(["#ff0660", "#416fec",])
+    .range(["#2900ff", "#3a3a3a",])
 
     // Compute the position of each group on the pie:
     const pie = d3.pie()
@@ -79,10 +38,7 @@ export function drawPrecip(queryData,diameter,inner,stroke,strokeColor,delay=0,i
     .innerRadius(radius-inner)
     .outerRadius(radius)
     
-    // let angleGen = d3.pie()
-    // .startAngle(Math.PI / 4)
-    // .endAngle(7 * Math.PI / 4)
-    // .value((d) => d.size);
+    
     
         
 
@@ -91,12 +47,9 @@ export function drawPrecip(queryData,diameter,inner,stroke,strokeColor,delay=0,i
 
     // compose chart, each part of the pie is a path that we build using arc function.
     svg
-    .selectAll('path')
+    .selectAll('slice')
     .data(data_ready)
     .join('path')
-    // .attr('d', d3.arc()
-    //     .innerRadius(60)         // KEEP THIS LOGIC FOR MOON DELAY TRANSITION
-    //     .outerRadius(radius))
     .transition()
     .duration(2000)
     .attrTween('d', function(d) {                   // 'd' is current datum and function is "tween" function that interpolates through the circle path 
@@ -110,4 +63,27 @@ export function drawPrecip(queryData,diameter,inner,stroke,strokeColor,delay=0,i
     .attr("stroke", strokeColor) //"black"
     .style("stroke-width", stroke) //5px
     .style("opacity", 1)
+
+    svg
+    .selectAll('slices')
+    .data(data_ready)
+    .join('text')
+    .text(function(d){return d.data[0]})
+    .transition()
+    .duration(2000)
+    .delay(delay)
+    .attr("transform", function(d) { return `translate(${arc.centroid(d)})`})
+    .style("text-anchor", "middle")
+}
+
+export function makePrecipWidget(data){
+    drawPrecip(data,150,30,"5px","black",1000,"#precip-widget")
+
+    const currentPrecip = data.days[0].precipprob
+
+    const precipContainer = document.querySelector("#precip-widget")
+    const precipDiv = document.createElement("div")
+    precipDiv.innerText = `${currentPrecip}` + `%`
+    precipContainer.append(precipDiv)
+
 }

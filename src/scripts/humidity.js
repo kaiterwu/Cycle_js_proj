@@ -1,4 +1,4 @@
-export function drawHumid(queryData,diameter,inner,stroke,strokeColor,delay=0,id){
+ function drawHumid(queryData,diameter,inner,stroke,strokeColor,delay=0,id){
     //set the dimensions and margins of the graph
     
     const width = diameter,
@@ -15,58 +15,17 @@ export function drawHumid(queryData,diameter,inner,stroke,strokeColor,delay=0,id
         .attr("height", height)
     .append("g")
         .attr("transform", `translate(${width / 2},${height / 2})`);
+
+    const currentHumid = queryData.currentConditions.humidity
+    let left = currentHumid
+    let right = 100 - currentHumid
     
-    // dynamic querydata , javascript time is in UTC, need to convert to EST 
-    // let currentSeconds = timeToSeconds(queryData.currentConditions.datetime)
-    // let sunriseSeconds = timeToSeconds(queryData.currentConditions.sunrise)
-    // let sunsetSeconds = timeToSeconds(queryData.currentConditions.sunset)
-    // const totalTime = 24*60*60;
-
-    // function nightTime(currentSeconds,sunriseSeconds,sunsetSeconds){
-    //     if(currentSeconds > sunsetSeconds){
-    //         return totalTime - currentSeconds + sunriseSeconds
-    //     }else if (currentSeconds < sunriseSeconds){
-    //        return sunriseSeconds - currentSeconds
-    //     }
-    //      else{
-    //        return totalTime - sunsetSeconds + sunriseSeconds
-    //     }
-    // }
-
-    // function dayTime(currentSeconds,sunriseSeconds,sunsetSeconds){
-    //     if (currentSeconds >sunriseSeconds && currentSeconds < sunsetSeconds){
-    //         return  sunsetSeconds - currentSeconds
-    //     }else {
-    //         return 0 
-    //     }
-    // }
-
-    // function timeElapse(currentSeconds,sunriseSeconds,sunsetSeconds){
-    //     if (currentSeconds > sunriseSeconds){
-    //        return  currentSeconds - sunriseSeconds
-    //     }else if (currentSeconds < sunsetSeconds){
-    //         return  totalTime +currentSeconds-sunriseSeconds 
-    //     }
-    // }
-
-    // // console.log(currentSeconds);
-    // // console.log(sunriseSeconds);
-    // // console.log(sunsetSeconds);
-    // // console.log(nightTime(currentSeconds,sunriseSeconds,sunsetSeconds))
-    // // console.log(dayTime(currentSeconds,sunriseSeconds,sunsetSeconds))
-    // // console.log(timeElapse(currentSeconds,sunriseSeconds,sunsetSeconds))
-
-    // let nightSeconds = nightTime(currentSeconds,sunriseSeconds,sunsetSeconds)
-    // let daySeconds = dayTime(currentSeconds,sunriseSeconds,sunsetSeconds)
-    // let nowSeconds = timeElapse(currentSeconds,sunriseSeconds,sunsetSeconds)
-    
-    // //dynamic data 
-    // const data = {elapse:nowSeconds,day:daySeconds,night:nightSeconds}
-    const data = [1,1]
+     const data = {"💧":left,"":right}
+    // const data = {"💧":1,"":2}
 
     // set color
     const color = d3.scaleOrdinal()
-    .range(["#ff0660", "#416fec",])
+    .range(["#9fc5e8", "#3a3a3a",])
 
     // Compute the position of each group on the pie:
     const pie = d3.pie()
@@ -79,10 +38,7 @@ export function drawHumid(queryData,diameter,inner,stroke,strokeColor,delay=0,id
     .innerRadius(radius-inner)
     .outerRadius(radius)
     
-    // let angleGen = d3.pie()
-    // .startAngle(Math.PI / 4)
-    // .endAngle(7 * Math.PI / 4)
-    // .value((d) => d.size);
+    
     
         
 
@@ -91,12 +47,9 @@ export function drawHumid(queryData,diameter,inner,stroke,strokeColor,delay=0,id
 
     // compose chart, each part of the pie is a path that we build using arc function.
     svg
-    .selectAll('path')
+    .selectAll('slice')
     .data(data_ready)
     .join('path')
-    // .attr('d', d3.arc()
-    //     .innerRadius(60)         // KEEP THIS LOGIC FOR MOON DELAY TRANSITION
-    //     .outerRadius(radius))
     .transition()
     .duration(2000)
     .attrTween('d', function(d) {                   // 'd' is current datum and function is "tween" function that interpolates through the circle path 
@@ -106,8 +59,33 @@ export function drawHumid(queryData,diameter,inner,stroke,strokeColor,delay=0,id
           return arc(d);
         };
    }).delay(delay)
+   
     .style('fill', d => color(d.data[0]))
     .attr("stroke", strokeColor) //"black"
     .style("stroke-width", stroke) //5px
     .style("opacity", 1)
+
+    svg
+    .selectAll('slices')
+    .data(data_ready)
+    .join('text')
+    .text(function(d){return d.data[0]})
+    .transition()
+    .duration(2000)
+    .delay(delay)
+    .attr("transform", function(d) { return `translate(${arc.centroid(d)})`})
+    .style("text-anchor", "middle")
+}
+
+export function makeHumidWidget(data){
+    drawHumid(data,150,30,"5px","black",500,"#humid-widget")
+
+    const currentHumid = data.currentConditions.humidity
+
+    const humidContainer = document.querySelector("#humid-widget")
+    const humidDiv = document.createElement("div")
+    humidDiv.innerText = `${Math.floor(currentHumid)}` + '%'
+    humidContainer.append(humidDiv)
+
+
 }

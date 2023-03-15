@@ -3,10 +3,10 @@ import { getDate,callclock,getlocation,getTime } from "./timeConvert";
 import { drawSun,openSunModal} from "./sunmoves";
 import { drawMoon,openMoonModal } from "./moonPhase";
 import { drawSeasons,openSeasonsModal } from "./seasons";
-import { drawTemp } from "./temperature";
-import { drawHumid } from "./humidity";
-import { drawUv } from "./uv";
-import { drawPrecip } from "./precipitation";
+import { makeTempWidget } from "./temperature";
+import { makeHumidWidget } from "./humidity";
+import { makeUvWidget } from "./uv";
+import { makePrecipWidget } from "./precipitation";
 
 
 
@@ -38,10 +38,10 @@ export async function getCurrentData(zipcode) {
           openMoonModal(data);
           openSeasonsModal(data);
           getlocation(data)
-          drawTemp(data,150,15,"5px","black",0,"#temp-widget")
-          drawHumid(data,150,15,"5px","black",500,"#humid-widget")
-          drawUv(data,150,15,"5px","black",1000,"#uv-widget")
-          drawPrecip(data,150,15,"5px","black",1500,"#precip-widget")
+          makeTempWidget(data)
+          makeHumidWidget(data)
+          makeUvWidget(data)
+          makePrecipWidget(data)
           callclock()
   
 
@@ -78,6 +78,10 @@ export async function getCurrentData(zipcode) {
           openSunModal(data);
           openMoonModal(data);
           openSeasonsModal(data);
+          makeTempWidget(data)
+          makeHumidWidget(data)
+          makeUvWidget(data)
+          makePrecipWidget(data)
           getlocation(data)
           getTime(data)
           

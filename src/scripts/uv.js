@@ -1,4 +1,4 @@
-export function drawUv(queryData,diameter,inner,stroke,strokeColor,delay=0,id){
+ function drawUv(queryData,diameter,inner,stroke,strokeColor,delay=0,id){
     //set the dimensions and margins of the graph
     
     const width = diameter,
@@ -16,57 +16,12 @@ export function drawUv(queryData,diameter,inner,stroke,strokeColor,delay=0,id){
     .append("g")
         .attr("transform", `translate(${width / 2},${height / 2})`);
     
-    // dynamic querydata , javascript time is in UTC, need to convert to EST 
-    // let currentSeconds = timeToSeconds(queryData.currentConditions.datetime)
-    // let sunriseSeconds = timeToSeconds(queryData.currentConditions.sunrise)
-    // let sunsetSeconds = timeToSeconds(queryData.currentConditions.sunset)
-    // const totalTime = 24*60*60;
-
-    // function nightTime(currentSeconds,sunriseSeconds,sunsetSeconds){
-    //     if(currentSeconds > sunsetSeconds){
-    //         return totalTime - currentSeconds + sunriseSeconds
-    //     }else if (currentSeconds < sunriseSeconds){
-    //        return sunriseSeconds - currentSeconds
-    //     }
-    //      else{
-    //        return totalTime - sunsetSeconds + sunriseSeconds
-    //     }
-    // }
-
-    // function dayTime(currentSeconds,sunriseSeconds,sunsetSeconds){
-    //     if (currentSeconds >sunriseSeconds && currentSeconds < sunsetSeconds){
-    //         return  sunsetSeconds - currentSeconds
-    //     }else {
-    //         return 0 
-    //     }
-    // }
-
-    // function timeElapse(currentSeconds,sunriseSeconds,sunsetSeconds){
-    //     if (currentSeconds > sunriseSeconds){
-    //        return  currentSeconds - sunriseSeconds
-    //     }else if (currentSeconds < sunsetSeconds){
-    //         return  totalTime +currentSeconds-sunriseSeconds 
-    //     }
-    // }
-
-    // // console.log(currentSeconds);
-    // // console.log(sunriseSeconds);
-    // // console.log(sunsetSeconds);
-    // // console.log(nightTime(currentSeconds,sunriseSeconds,sunsetSeconds))
-    // // console.log(dayTime(currentSeconds,sunriseSeconds,sunsetSeconds))
-    // // console.log(timeElapse(currentSeconds,sunriseSeconds,sunsetSeconds))
-
-    // let nightSeconds = nightTime(currentSeconds,sunriseSeconds,sunsetSeconds)
-    // let daySeconds = dayTime(currentSeconds,sunriseSeconds,sunsetSeconds)
-    // let nowSeconds = timeElapse(currentSeconds,sunriseSeconds,sunsetSeconds)
     
-    // //dynamic data 
-    // const data = {elapse:nowSeconds,day:daySeconds,night:nightSeconds}
-    const data = [1,1]
+    const data = [3,3,2,4,2]//0,1,2,3,4,5,6,7,8,9,10,11+
 
     // set color
     const color = d3.scaleOrdinal()
-    .range(["#ff0660", "#416fec",])
+    .range(["#3ded97", "#fff440","#e69138","#ff0800","#d200ff"])
 
     // Compute the position of each group on the pie:
     const pie = d3.pie()
@@ -79,11 +34,6 @@ export function drawUv(queryData,diameter,inner,stroke,strokeColor,delay=0,id){
     .innerRadius(radius-inner)
     .outerRadius(radius)
     
-    // let angleGen = d3.pie()
-    // .startAngle(Math.PI / 4)
-    // .endAngle(7 * Math.PI / 4)
-    // .value((d) => d.size);
-    
         
 
 
@@ -94,9 +44,6 @@ export function drawUv(queryData,diameter,inner,stroke,strokeColor,delay=0,id){
     .selectAll('path')
     .data(data_ready)
     .join('path')
-    // .attr('d', d3.arc()
-    //     .innerRadius(60)         // KEEP THIS LOGIC FOR MOON DELAY TRANSITION
-    //     .outerRadius(radius))
     .transition()
     .duration(2000)
     .attrTween('d', function(d) {                   // 'd' is current datum and function is "tween" function that interpolates through the circle path 
@@ -110,4 +57,35 @@ export function drawUv(queryData,diameter,inner,stroke,strokeColor,delay=0,id){
     .attr("stroke", strokeColor) //"black"
     .style("stroke-width", stroke) //5px
     .style("opacity", 1)
+}
+
+export function makeUvWidget(data){
+    drawUv(data,150,30,"5px","black",1500,"#uv-widget")
+
+    const currentUv = data.currentConditions.uvindex
+
+    const uvContainer = document.querySelector("#uv-widget")
+    const uvDiv = document.createElement("div")
+    uvDiv.innerText = "UV" + " " + `${currentUv}`
+
+    //["#3ded97", "#fff440","#e69138","#ff0800","#d200ff"]
+
+    if (currentUv < 3){
+        uvDiv.style.color = "#3ded97"
+        uvDiv.style.textShadow = "1px 1px 20px #3ded97"
+    } else if (currentUv >2 && currentUv < 6){
+        uvDiv.style.color = "#fff440"
+        uvDiv.style.textShadow = "1px 1px 20px #fff440"
+    }else if (currentUv > 5 && currentUv <8){
+        uvDiv.style.color = "#e69138"
+        uvDiv.style.textShadow = "1px 1px 20px #e69138"
+    }else if (currentUv > 7 && currentUv < 11){
+        uvDiv.style.color = "#ff0800"
+        uvDiv.style.textShadow = "1px 1px 20px #ff0800"
+    }else{
+        uvDiv.style.color = "#d200ff"
+        uvDiv.style.textShadow = "1px 1px 20px #d200ff"
+    }
+    
+    uvContainer.append(uvDiv)
 }

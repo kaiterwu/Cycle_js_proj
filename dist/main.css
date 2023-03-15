@@ -87,7 +87,7 @@ table {
 }
 
 .fa {
-  animation: partialFade 1s infinite;
+  animation: partialFade 2s infinite;
 }
 
 #upper-text > h1 {
@@ -350,6 +350,62 @@ table {
 
 #closeSelect {
   margin-top: 20%;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes infiniteFade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes partialFade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.weather-widgets > div {
+  display: flex;
+  justify-content: center;
+  width: 400px;
+}
+
+#temp-widget > div, #humid-widget > div, #uv-widget > div, #precip-widget > div {
+  color: white;
+  text-align: center;
+  vertical-align: center;
+  font-size: 60px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-shadow: 1px 1px 20px white;
+  width: 150px;
+  height: 150px;
+  line-height: 150px;
+  animation: fadeIn 5s;
+}
+
+.weather-widgets svg:hover {
+  border: solid 0px white;
+  border-radius: 100%;
+  box-shadow: 0 0px 20px rgb(255, 255, 255);
+  transition: box-shadow 0.3s ease-out;
 }
 
 * {

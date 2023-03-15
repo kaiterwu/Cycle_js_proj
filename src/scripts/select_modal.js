@@ -97,10 +97,8 @@ export function openSelectModal(){
         overlay.classList.remove("hidden")
         createElements()
         modal.append(selectContainer)
-        night.reset()
-        day.reset()
-        selectDate.reset()
-        enterZip.reset()
+        
+       
         
     }
 
@@ -140,10 +138,10 @@ export function openSelectModal(){
             }
         }
 
-        console.log(myNewZip)
-        console.log(myNewDate)
-        console.log(dayRadio)
-        console.log(nightRadio)
+        // console.log(myNewZip)
+        // console.log(myNewDate)
+        // console.log(dayRadio)
+        // console.log(nightRadio)
         
 
     }

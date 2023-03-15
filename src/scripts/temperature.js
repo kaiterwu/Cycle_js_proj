@@ -1,4 +1,4 @@
-export function drawTemp(queryData,diameter,inner,stroke,strokeColor,delay,id){
+ function drawTemp(queryData,diameter,inner,stroke,strokeColor,delay,id){
     //set the dimensions and margins of the graph
     
     const width = diameter,
@@ -16,57 +16,27 @@ export function drawTemp(queryData,diameter,inner,stroke,strokeColor,delay,id){
     .append("g")
         .attr("transform", `translate(${width / 2},${height / 2})`);
     
-    // dynamic querydata , javascript time is in UTC, need to convert to EST 
-    // let currentSeconds = timeToSeconds(queryData.currentConditions.datetime)
-    // let sunriseSeconds = timeToSeconds(queryData.currentConditions.sunrise)
-    // let sunsetSeconds = timeToSeconds(queryData.currentConditions.sunset)
-    // const totalTime = 24*60*60;
+   //dynamic data
+   const currentTemp = queryData.days[0].temp
+   const tempMin = queryData.days[0].tempmin
+   const tempMax = queryData.days[0].tempmax
+   const tempFeels = queryData.days[0].feelslike
 
-    // function nightTime(currentSeconds,sunriseSeconds,sunsetSeconds){
-    //     if(currentSeconds > sunsetSeconds){
-    //         return totalTime - currentSeconds + sunriseSeconds
-    //     }else if (currentSeconds < sunriseSeconds){
-    //        return sunriseSeconds - currentSeconds
-    //     }
-    //      else{
-    //        return totalTime - sunsetSeconds + sunriseSeconds
-    //     }
-    // }
+//    console.log(currentTemp)
+//    console.log(tempMin)
+//    console.log(tempMax)
+//    console.log(tempFeels)
 
-    // function dayTime(currentSeconds,sunriseSeconds,sunsetSeconds){
-    //     if (currentSeconds >sunriseSeconds && currentSeconds < sunsetSeconds){
-    //         return  sunsetSeconds - currentSeconds
-    //     }else {
-    //         return 0 
-    //     }
-    // }
+   let leftSide = currentTemp - tempMin 
+   let rightSide = tempMax - currentTemp
 
-    // function timeElapse(currentSeconds,sunriseSeconds,sunsetSeconds){
-    //     if (currentSeconds > sunriseSeconds){
-    //        return  currentSeconds - sunriseSeconds
-    //     }else if (currentSeconds < sunsetSeconds){
-    //         return  totalTime +currentSeconds-sunriseSeconds 
-    //     }
-    // }
+   const data = [leftSide,rightSide]
 
-    // // console.log(currentSeconds);
-    // // console.log(sunriseSeconds);
-    // // console.log(sunsetSeconds);
-    // // console.log(nightTime(currentSeconds,sunriseSeconds,sunsetSeconds))
-    // // console.log(dayTime(currentSeconds,sunriseSeconds,sunsetSeconds))
-    // // console.log(timeElapse(currentSeconds,sunriseSeconds,sunsetSeconds))
-
-    // let nightSeconds = nightTime(currentSeconds,sunriseSeconds,sunsetSeconds)
-    // let daySeconds = dayTime(currentSeconds,sunriseSeconds,sunsetSeconds)
-    // let nowSeconds = timeElapse(currentSeconds,sunriseSeconds,sunsetSeconds)
-    
-    // //dynamic data 
-    // const data = {elapse:nowSeconds,day:daySeconds,night:nightSeconds}
-    const data = [1,1]
+    // const data = [1,1]
 
     // set color
     const color = d3.scaleOrdinal()
-    .range(["#ff0660", "#416fec",])
+    .range(["#ff0c00", "#29cdff",])
 
     // Compute the position of each group on the pie:
     const pie = d3.pie()
@@ -79,10 +49,6 @@ export function drawTemp(queryData,diameter,inner,stroke,strokeColor,delay,id){
     .innerRadius(radius-inner)
     .outerRadius(radius)
     
-    // let angleGen = d3.pie()
-    // .startAngle(Math.PI / 4)
-    // .endAngle(7 * Math.PI / 4)
-    // .value((d) => d.size);
     
         
 
@@ -94,9 +60,6 @@ export function drawTemp(queryData,diameter,inner,stroke,strokeColor,delay,id){
     .selectAll('path')
     .data(data_ready)
     .join('path')
-    // .attr('d', d3.arc()
-    //     .innerRadius(60)         // KEEP THIS LOGIC FOR MOON DELAY TRANSITION
-    //     .outerRadius(radius))
     .transition()
     .duration(2000)
     .attrTween('d', function(d) {                   // 'd' is current datum and function is "tween" function that interpolates through the circle path 
@@ -110,4 +73,29 @@ export function drawTemp(queryData,diameter,inner,stroke,strokeColor,delay,id){
     .attr("stroke", strokeColor) //"black"
     .style("stroke-width", stroke) //5px
     .style("opacity", 1)
+}
+
+export function makeTempWidget(data){
+    drawTemp(data,150,30,"5px","black",0,"#temp-widget")
+    const currentTemp = data.days[0].temp
+    const tempMin = data.days[0].tempmin
+    const tempMax = data.days[0].tempmax
+    const tempFeels = data.days[0].feelslike
+
+    
+    const tempContainer = document.querySelector("#temp-widget")
+    const tempDiv = document.createElement("div")
+    tempDiv.innerText = `${currentTemp}` + '°F'
+   tempContainer.append(tempDiv)
+}
+
+function openTempModal(data){
+    const modal = document.querySelector(".astro-modal");
+    const overlay = document.querySelector(".overlay");
+    const openTemp = document.querySelector("#temp-widget>svg")
+    const closeModalBtn = document.querySelector(".close-btn")
+    const svg = document.querySelector("#svg-container")
+    const upper = document.querySelector("#upper-text")
+    const lower = document.querySelector("#lower-text")
+    
 }
