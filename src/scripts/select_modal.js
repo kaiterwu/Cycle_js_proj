@@ -34,6 +34,7 @@ export function openSelectModal(){
         const selectDate = document.createElement("input")
         selectDate.setAttribute("type","date")
         selectDate.setAttribute("id","input-date")
+
         let currentDate = new Date()
         currentDate = currentDate.toISOString().slice(0,10)
         selectDate.max = currentDate
@@ -113,7 +114,7 @@ export function openSelectModal(){
 
         let currentDate = new Date()
         currentDate = currentDate.toISOString().slice(0,10)
-        selectDate.max = currentDate
+        
 
         if (currentDate === myNewDate){
             clearContainer()
