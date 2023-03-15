@@ -21,9 +21,9 @@ const now = Math.floor(Date.now()/1000)
 export async function getCurrentData(zipcode) {
     
     try {
-       const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${zipcode}/${now}?key=${apiKey}`);
+      //  const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${zipcode}/${now}?key=${apiKey}`);
         //day/spring
-        //  const response = await fetch(`../project_docs/2023-03-12.json`);
+         const response = await fetch(`../project_docs/2023-03-12.json`);
         //  night/winter
         //  const response = await fetch(`../project_docs/night_data.json`)
         // const response = await fetch(`../project_docs/summer.json`)
@@ -38,10 +38,10 @@ export async function getCurrentData(zipcode) {
           openMoonModal(data);
           openSeasonsModal(data);
           getlocation(data)
-          drawTemp(data,150,15,"5px","black","#temp-widget")
-          drawHumid(data,150,15,"5px","black","#humid-widget")
-          drawUv(data,150,15,"5px","black","#uv-widget")
-          drawPrecip(data,150,15,"5px","black","#precip-widget")
+          drawTemp(data,150,15,"5px","black",0,"#temp-widget")
+          drawHumid(data,150,15,"5px","black",500,"#humid-widget")
+          drawUv(data,150,15,"5px","black",1000,"#uv-widget")
+          drawPrecip(data,150,15,"5px","black",1500,"#precip-widget")
           callclock()
   
 
@@ -80,6 +80,7 @@ export async function getCurrentData(zipcode) {
           openSeasonsModal(data);
           getlocation(data)
           getTime(data)
+          
           // callclock()
          
           console.log(data)

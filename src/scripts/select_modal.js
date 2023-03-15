@@ -4,12 +4,21 @@ function clearContainer(){
     let theSun = document.querySelector("#sun-path")
     let theMoon = document.querySelector("#moons")
     let theSeasons = document.querySelector("#seasons")
+    let theTemp = document.querySelector("#temp-widget")
+    let theHumid = document.querySelector("#humid-widget")
+    let theUv = document.querySelector("#uv-widget")
+    let thePrecip = document.querySelector("#precip-widget")
     let location = document.querySelector("#location")
 
     theSun.innerHTML = ""
     theMoon.innerHTML = ""
     theSeasons.innerHTML = ""
     location.innerHTML = ""
+    theTemp.innerHTML = ""
+    theHumid.innerHTML = ""
+    theUv.innerHTML = ""
+    thePrecip.innerHTML = ""
+    
 }
 
 export function openSelectModal(){

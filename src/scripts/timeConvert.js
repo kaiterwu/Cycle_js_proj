@@ -134,13 +134,14 @@ export function getTime(data){
     // let timeNow = document.querySelector('#clock')
     // timeNow.innerText = dataTime
     let showTime; 
-    if (dataTime === "9:00:00"){
+    if (dataTime === "09:00:00"){
         showTime = "9:00 AM"
     }else{
         showTime = "9:00 PM"
     }
     document.querySelector("#location").appendChild(document.createElement("br"))
     document.querySelector("#location").append(showTime)
+    console.log(dataTime)
    
 }
 export function callclock(){

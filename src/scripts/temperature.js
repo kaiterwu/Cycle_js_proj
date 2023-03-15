@@ -1,4 +1,4 @@
-export function drawTemp(queryData,diameter,inner,stroke,strokeColor,id){
+export function drawTemp(queryData,diameter,inner,stroke,strokeColor,delay,id){
     //set the dimensions and margins of the graph
     
     const width = diameter,

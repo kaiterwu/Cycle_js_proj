@@ -1,4 +1,4 @@
-export function drawUv(queryData,diameter,inner,stroke,strokeColor,id){
+export function drawUv(queryData,diameter,inner,stroke,strokeColor,delay=0,id){
     //set the dimensions and margins of the graph
     
     const width = diameter,
@@ -105,7 +105,7 @@ export function drawUv(queryData,diameter,inner,stroke,strokeColor,id){
             d.endAngle = i(t);
           return arc(d);
         };
-   })
+   }).delay(delay)
     .style('fill', d => color(d.data[0]))
     .attr("stroke", strokeColor) //"black"
     .style("stroke-width", stroke) //5px
