@@ -78,8 +78,9 @@ export function drawSun(queryData,diameter,inner,stroke,strokeColor,id){
 
     const arc =  d3.arc()
     .innerRadius(radius-inner)
-    .outerRadius(radius);
-    
+    .outerRadius(radius)
+    // .startAngle(Math.PI/2)
+    // .endAngle(Math.PI*3/2)
         
 
 
@@ -167,7 +168,11 @@ export function openSunModal(queryData){
         if(currentSeconds > sunsetSeconds){
             lowerHead.innerText = "Sunset was at"
             dayImg.src = 'images/days/moon.png'
-        }else{
+        }else if (currentSeconds<sunriseSeconds){
+            upperHead.innerText = "Sunrise was last at"
+            lowerHead.innerText = "Sunset was at"
+            dayImg.src = 'images/days/moon.png'
+        } else{
             lowerHead.innerText = "Sunset is at"
             dayImg.src = 'images/days/sun2.png'
         }

@@ -6,6 +6,8 @@ import { drawSeasons,openSeasonsModal } from "./seasons";
 
 
 
+
+
 const apiKey = "4P48W2KCWFQAQ6SJ99K5H2VBM"
 // const zip = "11040"
 const now = Math.floor(Date.now()/1000)
@@ -33,6 +35,9 @@ export async function getCurrentData(zipcode) {
           openSeasonsModal(data);
           getlocation(data)
           callclock()
+  
+
+        
          
           console.log(data)
         
