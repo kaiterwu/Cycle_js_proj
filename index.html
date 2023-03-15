@@ -20,11 +20,11 @@
 
   <body>
     <section class = "intro-modal">
-      <div id = "introduction">Welcome to Cycle. This is a webpage designed to 
-        show a user realtime astronomical and weather data. Each circle is an interactable element 
+      <div id = "introduction">Welcome to Cycle. This webpage is designed to 
+        show realtime astronomical and weather data. Each graphic is an interactable element 
         that will show you more information after being selected. Selecting a date other than the current day will default 
-        the time of that day to 9:00 AM/PM. Clock display is based on system time. Seasons also utilize meteorological dates.
-        Enjoy, and please begin by entering a US zipcode below! 
+        the time of that day to 9:00 AM/PM. Note that the clock display is based on system time and seasons are based off meteorological dates.
+        Please begin by entering a US zipcode below! 
       </div>
       <input type = number id = zipcode placeholder = "ZIP code">
       <button id = "start">Start</button>
@@ -77,8 +77,10 @@
         <div id = "sun-path"></div>
       </div>
       <div class = weather-widgets>
-        <div id = 
-      </div>
+        <div id = "temp-widget"></div>
+        <div id = "humid-widget"></div>
+        <div id = "uv-widget"></div>
+        <div id = "precip-widget"></div>
        </div>
   </div>
   </body>
