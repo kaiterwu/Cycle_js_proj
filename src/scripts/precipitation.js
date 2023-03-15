@@ -87,3 +87,93 @@ export function makePrecipWidget(data){
     precipContainer.append(precipDiv)
 
 }
+
+export function openPrecipModal(data){
+
+    const currentPrecip = data.days[0].precipprob
+    const precipType = data.days[0].preciptype
+
+    const modal = document.querySelector(".astro-modal");
+    const overlay = document.querySelector(".overlay");
+    const openPrecip = document.querySelector("#precip-widget>svg")
+    const closeModalBtn = document.querySelector(".close-btn")
+    const svg = document.querySelector("#svg-container")
+    const upper = document.querySelector("#upper-text")
+    const lower = document.querySelector("#lower-text")
+    
+
+    const openModal=function(){
+        modal.classList.remove("hidden")
+        overlay.classList.remove("hidden")
+    };
+
+    const closeModal = function(){
+        modal.classList.add("hidden")
+        overlay.classList.add("hidden")
+        svg.innerHTML = ""
+        upper.innerHTML = ""
+        lower.innerHTML = ""
+    };
+
+    function createText(data){
+        const upperHead = document.createElement("p")
+        const upperPrecip = document.createElement("h1")
+        const lowerHead = document.createElement("p")
+        const lowerPrecip = document.createElement("h1")
+        const PrecipImg = document.createElement("img")
+
+        upperHead.innerText = "Precipitation Chance"
+        upperPrecip.innerText = `${Math.round(currentPrecip)}` + `%`
+
+        upperPrecip.style.color = "#000000"
+        upperPrecip.style.border = "5px solid #2900ff"
+        upperPrecip.style.borderRadius = "20px"
+        upperPrecip.style.background = "#2900ff"
+        upperPrecip.style.boxShadow = "0px 0px 20px 20px #2900ff"
+        upperPrecip.style.textShadow = "1px 1px 10px black"
+
+        lowerHead.innerText = "Precipitation Type"
+        
+        if (precipType){
+            for (let i = 0; i < precipType.length; i++) {
+                precipType[i] = precipType[i][0].toUpperCase() + precipType[i].slice(1);
+            }
+            
+        
+            lowerPrecip.innerText = precipType.join(" ")
+        }else{
+            lowerPrecip.innerText = "None"
+        }
+
+        lowerPrecip.style.color = "#2900ff"
+        lowerPrecip.style.textShadow = "1px 1px 10px #2900ff"
+        lowerPrecip.style.fontSize = '35px'
+        lowerPrecip.style.border = "5px solid #2900ff"
+        lowerPrecip.style.borderRadius = "20px"
+        lowerPrecip.style.boxShadow = "0px 0px 20px 20px #2900ff"
+        lowerPrecip.style.padding = "5px"
+
+        PrecipImg.src = 'images/weather/precipitation.png'
+        
+
+        svg.append(PrecipImg)
+        upper.append(upperHead)
+        upper.append(upperPrecip)
+        lower.append(lowerHead)
+        lower.append(lowerPrecip)
+
+        
+
+        
+    }
+
+    function onOpen(){
+        drawPrecip(data,600,60,"5px","white",0,"#svg-container")
+        createText(data)
+    }
+
+    openPrecip.addEventListener("click",openModal)
+    openPrecip.addEventListener("click",onOpen)
+    closeModalBtn.addEventListener("click",closeModal)
+}
+

@@ -158,7 +158,7 @@ export function openHumidModal(data){
     }
 
     function onOpen(){
-        drawHumid(data,600,80,"5px","white",0,"#svg-container")
+        drawHumid(data,600,60,"5px","white",0,"#svg-container")
         createText(data)
     }
 

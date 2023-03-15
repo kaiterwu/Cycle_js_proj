@@ -4,10 +4,9 @@ import { drawSun,openSunModal} from "./sunmoves";
 import { drawMoon,openMoonModal } from "./moonPhase";
 import { drawSeasons,openSeasonsModal } from "./seasons";
 import { makeTempWidget,openTempModal } from "./temperature";
-import { makeHumidWidget } from "./humidity";
-import { makeUvWidget } from "./uv";
-import { makePrecipWidget } from "./precipitation";
-import { openHumidModal } from "./humidity";
+import { makeHumidWidget,openHumidModal } from "./humidity";
+import { makeUvWidget,openUvModal } from "./uv";
+import { makePrecipWidget, openPrecipModal } from "./precipitation";
 
 
 
@@ -22,9 +21,9 @@ const now = Math.floor(Date.now()/1000)
 export async function getCurrentData(zipcode) {
     
     try {
-      //  const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${zipcode}/${now}?key=${apiKey}`);
+       const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${zipcode}/${now}?key=${apiKey}`);
         //day/spring
-         const response = await fetch(`../project_docs/2023-03-12.json`);
+        //  const response = await fetch(`../project_docs/2023-03-12.json`);
         //  night/winter
         //  const response = await fetch(`../project_docs/night_data.json`)
         // const response = await fetch(`../project_docs/summer.json`)
@@ -45,6 +44,8 @@ export async function getCurrentData(zipcode) {
           makePrecipWidget(data)
           openTempModal(data)
           openHumidModal(data)
+          openPrecipModal(data)
+          openUvModal(data)
           callclock()
   
 
@@ -85,7 +86,11 @@ export async function getCurrentData(zipcode) {
           makeHumidWidget(data)
           makeUvWidget(data)
           makePrecipWidget(data)
+          openTempModal(data)
+          openHumidModal(data)
+          openPrecipModal(data)
           getlocation(data)
+          openUvModal(data)
           getTime(data)
           
           // callclock()

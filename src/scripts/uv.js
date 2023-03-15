@@ -89,3 +89,102 @@ export function makeUvWidget(data){
     
     uvContainer.append(uvDiv)
 }
+
+export function openUvModal(data){
+
+    const currentUv = data.currentConditions.uvindex
+
+    const modal = document.querySelector(".astro-modal");
+    const overlay = document.querySelector(".overlay");
+    const openUv = document.querySelector("#uv-widget>svg")
+    const closeModalBtn = document.querySelector(".close-btn")
+    const svg = document.querySelector("#svg-container")
+    const upper = document.querySelector("#upper-text")
+    const lower = document.querySelector("#lower-text")
+    
+
+    const openModal=function(){
+        modal.classList.remove("hidden")
+        overlay.classList.remove("hidden")
+    };
+
+    const closeModal = function(){
+        modal.classList.add("hidden")
+        overlay.classList.add("hidden")
+        svg.innerHTML = ""
+        upper.innerHTML = ""
+        lower.innerHTML = ""
+    };
+
+    function createText(data){
+        const upperHead = document.createElement("p")
+        const upperUv = document.createElement("h1")
+        const lowerHead = document.createElement("p")
+        const lowerUv = document.createElement("h1")
+        const uvImg = document.createElement("img")
+
+        upperHead.innerText = "Current UV index"
+        upperUv.innerText = `${currentUv}`
+
+        let uvColors = ["#3ded97", "#fff440","#e69138","#ff0800","#d200ff"]
+        let currentUvColor;
+        if (currentUv < 3){
+           currentUvColor = uvColors[0]
+           lowerUv.innerText = 'Low'
+        } else if (currentUv >2 && currentUv < 6){
+            currentUvColor = uvColors[1]
+            lowerUv.innerText = 'Moderate'
+        }else if (currentUv > 5 && currentUv <8){
+            currentUvColor = uvColors[2]
+            lowerUv.innerText = 'High'
+        }else if (currentUv > 7 && currentUv < 11){
+            currentUvColor = uvColors[3]
+            lowerUv.innerText = 'Very High'
+        }else{
+            currentUvColor = uvColors[4]
+            lowerUv.innerText = 'Extreme'
+        }
+        upperUv.style.color = "#000000"
+        upperUv.style.border = `5px solid ${currentUvColor}`
+        upperUv.style.borderRadius = "20px"
+        upperUv.style.background = `${currentUvColor}`
+        upperUv.style.boxShadow = `0px 0px 20px 20px ${currentUvColor}`
+        upperUv.style.textShadow = "1px 1px 10px black"
+
+        lowerHead.innerText = "Current Condition"
+        
+        
+
+        lowerUv.style.color = `${currentUvColor}`
+        lowerUv.style.textShadow = `1px 1px 10px ${currentUvColor}`
+        lowerUv.style.borderRadius = "20px"
+        lowerUv.style.border = `5px solid ${currentUvColor}`
+        lowerUv.style.boxShadow = `1px 1px 20px 20px ${currentUvColor}`
+        lowerUv.style.padding = "10px"
+    
+
+        uvImg.src = 'images/weather/uv.png'
+        
+        
+
+        svg.append(uvImg)
+        upper.append(upperHead)
+        upper.append(upperUv)
+        lower.append(lowerHead)
+        lower.append(lowerUv)
+
+        
+
+        
+    }
+
+    function onOpen(){
+        drawUv(data,600,30,"20px","black",0,"#svg-container")
+        createText(data)
+    }
+
+    openUv.addEventListener("click",openModal)
+    openUv.addEventListener("click",onOpen)
+    closeModalBtn.addEventListener("click",closeModal)
+}
+
