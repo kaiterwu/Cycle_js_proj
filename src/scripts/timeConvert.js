@@ -134,7 +134,7 @@ export function getTime(data){
     // let timeNow = document.querySelector('#clock')
     // timeNow.innerText = dataTime
     let showTime; 
-    if (dataTime = "9:00:00"){
+    if (dataTime === "9:00:00"){
         showTime = "9:00 AM"
     }else{
         showTime = "9:00 PM"

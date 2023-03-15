@@ -123,7 +123,7 @@ export function openSelectModal(){
             if (nightRadio){
                 //HAVE TO CLEAR CONTAINERS FOR ID seasons, moons, sun-path
                 clearContainer()
-                getPastData(myNewZip,myNewDate,"18:00:00")
+                getPastData(myNewZip,myNewDate,"21:00:00")
                 
             }else{
                 clearContainer()
