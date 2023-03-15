@@ -83,7 +83,7 @@ export function makePrecipWidget(data){
 
     const precipContainer = document.querySelector("#precip-widget")
     const precipDiv = document.createElement("div")
-    precipDiv.innerText = `${currentPrecip}` + `%`
+    precipDiv.innerText = `${Math.round(currentPrecip)}` + `%`
     precipContainer.append(precipDiv)
 
 }

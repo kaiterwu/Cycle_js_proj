@@ -89,7 +89,13 @@ export function makeTempWidget(data){
    tempContainer.append(tempDiv)
 }
 
-function openTempModal(data){
+export function openTempModal(data){
+
+    const currentTemp = data.days[0].temp
+    const tempMin = data.days[0].tempmin
+    const tempMax = data.days[0].tempmax
+    const tempFeels = data.days[0].feelslike
+
     const modal = document.querySelector(".astro-modal");
     const overlay = document.querySelector(".overlay");
     const openTemp = document.querySelector("#temp-widget>svg")
@@ -98,4 +104,77 @@ function openTempModal(data){
     const upper = document.querySelector("#upper-text")
     const lower = document.querySelector("#lower-text")
     
+
+    const openModal=function(){
+        modal.classList.remove("hidden")
+        overlay.classList.remove("hidden")
+    };
+
+    const closeModal = function(){
+        modal.classList.add("hidden")
+        overlay.classList.add("hidden")
+        svg.innerHTML = ""
+        upper.innerHTML = ""
+        lower.innerHTML = ""
+    };
+
+    function createText(data){
+        const upperHead = document.createElement("p")
+        const upperTemp = document.createElement("h1")
+        const lowerHead = document.createElement("p")
+        const lowerTemp = document.createElement("h1")
+        const tempImg = document.createElement("div")
+
+        upperHead.innerText = "Day High is "
+        upperTemp.innerText = `${tempMax}`
+
+        upperTemp.style.color = "black"
+        upperTemp.style.border = "5px solid #ff0c00"
+        upperTemp.style.borderRadius = "20px"
+        upperTemp.style.background = "#ff0c00"
+        upperTemp.style.boxShadow = "0px 0px 20px 20px #ff0c00"
+        upperTemp.style.textShadow = "1px 1px 5px black"
+
+        lowerHead.innerText = "Day Low is"
+        lowerTemp.innerText = `${tempMin}`
+
+        lowerTemp.style.color = "black"
+        lowerTemp.style.border = "5px solid #29cdff"
+        lowerTemp.style.borderRadius = "20px"
+        lowerTemp.style.background = "#29cdff"
+        lowerTemp.style.boxShadow = "0px 0px 20px 20px #29cdff"
+        lowerTemp.style.textShadow = "1px 1px 5px black"
+
+        upper.append(upperHead)
+        upper.append(upperTemp)
+        lower.append(lowerHead)
+        lower.append(lowerTemp)
+
+        let currentContainer = document.createElement("div")
+        let currentTempContainer = document.createElement("div")
+        let feelsContainer = document.createElement("div")
+        let feelsTempContainer = document.createElement("div")
+
+        currentContainer.innerText = "Currently:"
+        currentTempContainer.innerText = `${currentTemp}` + '°F'
+        feelsContainer.innerText = "Feels like:"
+        feelsTempContainer.innerText =`${tempFeels}` + '°F'
+
+        tempImg.append(currentContainer)
+        tempImg.append(currentTempContainer)
+        tempImg.append(document.createElement("br"))
+        tempImg.append(feelsContainer)
+        tempImg.append(feelsTempContainer)
+
+        svg.append(tempImg)
+    }
+
+    function onOpen(){
+        drawTemp(data,600,80,"5px","white",0,"#svg-container")
+        createText(data)
+    }
+
+    openTemp.addEventListener("click",openModal)
+    openTemp.addEventListener("click",onOpen)
+    closeModalBtn.addEventListener("click",closeModal)
 }

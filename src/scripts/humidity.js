@@ -84,8 +84,85 @@ export function makeHumidWidget(data){
 
     const humidContainer = document.querySelector("#humid-widget")
     const humidDiv = document.createElement("div")
-    humidDiv.innerText = `${Math.floor(currentHumid)}` + '%'
+    humidDiv.innerText = `${Math.round(currentHumid)}` + '%'
     humidContainer.append(humidDiv)
 
 
+}
+
+export function openHumidModal(data){
+
+    const currentHumid = data.currentConditions.humidity
+    const currentDew = data.currentConditions.dew
+
+    const modal = document.querySelector(".astro-modal");
+    const overlay = document.querySelector(".overlay");
+    const openHumid = document.querySelector("#humid-widget>svg")
+    const closeModalBtn = document.querySelector(".close-btn")
+    const svg = document.querySelector("#svg-container")
+    const upper = document.querySelector("#upper-text")
+    const lower = document.querySelector("#lower-text")
+    
+
+    const openModal=function(){
+        modal.classList.remove("hidden")
+        overlay.classList.remove("hidden")
+    };
+
+    const closeModal = function(){
+        modal.classList.add("hidden")
+        overlay.classList.add("hidden")
+        svg.innerHTML = ""
+        upper.innerHTML = ""
+        lower.innerHTML = ""
+    };
+
+    function createText(data){
+        const upperHead = document.createElement("p")
+        const upperHumid = document.createElement("h1")
+        const lowerHead = document.createElement("p")
+        const lowerDew = document.createElement("h1")
+        const humidImg = document.createElement("img")
+
+        upperHead.innerText = "Current Humidity"
+        upperHumid.innerText = `${Math.round(currentHumid)}` + `%`
+
+        upperHumid.style.color = "#000000"
+        upperHumid.style.border = "5px solid #9fc5e8"
+        upperHumid.style.borderRadius = "20px"
+        upperHumid.style.background = "#9fc5e8"
+        upperHumid.style.boxShadow = "0px 0px 20px 20px #9fc5e8"
+        upperHumid.style.textShadow = "1px 1px 5px black"
+
+        lowerHead.innerText = "Current Dew Point"
+        lowerDew.innerText = `${Math.round(currentDew)}`+ '°F'
+
+        lowerDew.style.color = "#9fc5e8"
+        lowerDew.style.border = "5px solid #9fc5e8"
+        lowerDew.style.borderRadius = "20px"
+        lowerDew.style.background = "#9fc5e8"
+        lowerDew.style.boxShadow = "0px 0px 20px 20px #9fc5e8"
+        lowerDew.style.textShadow = "1px 1px 5px black"
+
+        humidImg.src = 'images/weather/humidity.png'
+
+        svg.append(humidImg)
+        upper.append(upperHead)
+        upper.append(upperHumid)
+        lower.append(lowerHead)
+        lower.append(lowerDew)
+
+        
+
+        
+    }
+
+    function onOpen(){
+        drawHumid(data,600,80,"5px","white",0,"#svg-container")
+        createText(data)
+    }
+
+    openHumid.addEventListener("click",openModal)
+    openHumid.addEventListener("click",onOpen)
+    closeModalBtn.addEventListener("click",closeModal)
 }
