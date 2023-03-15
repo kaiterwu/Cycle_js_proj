@@ -440,8 +440,9 @@ body {
 
 .weather-widgets {
   display: flex;
-  min-height: 600px;
-  min-width: 400px;
+  flex-direction: column;
+  max-height: 600px;
+  max-width: 400px;
 }
 
 #location {
