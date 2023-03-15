@@ -25,16 +25,19 @@ export function openSelectModal(){
     enterInputs.setAttribute("id","enterInputs")
     enterInputs.innerText = "→"
     
-    const selectDate = document.createElement("input")
-    selectDate.setAttribute("type","date")
-    selectDate.setAttribute("id","input-date")
-    
     const closeButt = document.createElement("button")
     closeButt.setAttribute("id","closeSelect")
     closeButt.innerText = "←"
     closeButt.style.width = "100px"
-
+    
     function createElements(){
+        const selectDate = document.createElement("input")
+        selectDate.setAttribute("type","date")
+        selectDate.setAttribute("id","input-date")
+        let currentDate = new Date()
+        currentDate = currentDate.toISOString().slice(0,10)
+        selectDate.max = currentDate
+        
         const dayNight = document.createElement("div")
         dayNight.setAttribute("id","dayNight")
 
@@ -73,6 +76,7 @@ export function openSelectModal(){
 
 
         selectContainer.append(enterZip,selectDate,dayNight,enterInputs,closeButt)
+
     }
         
 
@@ -83,6 +87,10 @@ export function openSelectModal(){
         overlay.classList.remove("hidden")
         createElements()
         modal.append(selectContainer)
+        night.reset()
+        day.reset()
+        selectDate.reset()
+        enterZip.reset()
         
     }
 
@@ -105,6 +113,7 @@ export function openSelectModal(){
 
         let currentDate = new Date()
         currentDate = currentDate.toISOString().slice(0,10)
+        selectDate.max = currentDate
 
         if (currentDate === myNewDate){
             clearContainer()

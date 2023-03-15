@@ -1,3 +1,39 @@
+@keyframes fadeIn {
+    0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes infiniteFade {
+    0% { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+
+@keyframes partialFade {
+    0% { opacity:1; }
+  50%  { opacity:0.25;}
+  100% { opacity:1; }
+}
+
+#location{
+    animation:infiniteFade 5s infinite;
+}
+
+.fa{
+    animation:partialFade 1s infinite;
+    // animation-delay: 10ms
+}
+
+#upper-text>h1{
+    animation:infiniteFade 4s infinite;
+}
+
+#lower-text>h1{
+    animation:infiniteFade 4s infinite;
+    animation-delay:2s
+}
+
+
 
 .astro-modal{
     border: double 10px white;
@@ -12,8 +48,7 @@
     top:22.5%;
     z-index: 1000;
 }
-.astro-modal, #info-text h1,p
-{animation:opac 1.5s}@keyframes opac{from{opacity:0} to{opacity:1}}
+
 
 .intro-modal{
     border: double 10px white;
@@ -29,9 +64,10 @@
     position:absolute;
     // top:22.5%;
     z-index: 1000;
+    animation: fadeIn 3s;
 }
-.intro-modal
-{animation:opac 0.25s}@keyframes opac{from{opacity:0} to{opacity:1}}
+
+
 
 #zipcode{
     border: inherit;
@@ -113,8 +149,14 @@
     z-index: -1;
     
 }
-img .moon_background,.intro-modal
-    {animation:opac 5s}@keyframes opac{from{opacity:0} to{opacity:1}}
+.astro-modal{
+    animation: fadeIn 2s;
+}
+
+
+
+
+
 
 
 

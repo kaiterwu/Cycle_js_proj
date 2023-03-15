@@ -131,8 +131,17 @@ export function getDate(data){
 export function getTime(data){
     let dataTime = data.currentConditions.datetime
 
-    let timeNow = document.querySelector('#clock')
-    timeNow.innerText = dataTime
+    // let timeNow = document.querySelector('#clock')
+    // timeNow.innerText = dataTime
+    let showTime; 
+    if (dataTime = "9:00:00"){
+        showTime = "9:00 AM"
+    }else{
+        showTime = "9:00 PM"
+    }
+    document.querySelector("#location").appendChild(document.createElement("br"))
+    document.querySelector("#location").append(showTime)
+   
 }
 export function callclock(){
     function realClock() {
