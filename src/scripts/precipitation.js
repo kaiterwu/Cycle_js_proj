@@ -130,7 +130,7 @@ export function openPrecipModal(data){
         upperPrecip.style.borderRadius = "20px"
         upperPrecip.style.background = "#2900ff"
         upperPrecip.style.boxShadow = "0px 0px 20px 20px #2900ff"
-        upperPrecip.style.textShadow = "1px 1px 10px black"
+        upperPrecip.style.textShadow = "1px 1px 5px black"
 
         lowerHead.innerText = "Precipitation Type"
         
