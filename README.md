@@ -18,7 +18,10 @@ All graphing elements in this project are rendered with the basic D3 library. Va
 ### Implementation 
 D3 was used to implement the visualization of concentric circles. It was decided early on to use Modals in order to 
 keep the organization of the project clear. Two modals were used in total that are rerendered using JavaScript HTML DOM 
-methods. 
+methods. Methods were compiled into compacted functions which were then passed to my index.js. 
+
+# ![Alt text](project_docs/proj_images/data_code_snippet.png )
+
 #### User Modals
 
 # ![Alt text](project_docs/proj_images/intro_modal.png "Introduction Modal")
@@ -38,10 +41,7 @@ For the main page, 7 total different pages render based on the element selected.
 
 ## Features 
 
-Cycle allows users to see different weather parameters for current time and past time. Images in some graph elements are dynamic based off of parameters selected. For example, a sun or moon will appear based on whether the sun has set. Moon phases images will display different based off of current moon phase. And season images will change based off of 
-
-
-
+Cycle allows users to see different weather parameters for current time and past time. Images in some graph elements are dynamic based off of parameters selected. For example, a sun or moon will appear based on whether the sun has set. Moon phases images will display different based off of current moon phase. And season images will change based off of day of the year. 
 
 Data limitation is based on historical data provided by the weather API. Users are given the option to select any US based ZIP code,a date, and either nightime or daytime if choosing data in the past when selecting data filters. 
 

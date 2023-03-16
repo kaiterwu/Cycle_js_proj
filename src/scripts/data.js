@@ -13,9 +13,7 @@ import { makePrecipWidget, openPrecipModal } from "./precipitation";
 
 
 const apiKey = "4P48W2KCWFQAQ6SJ99K5H2VBM"
-
 const now = Math.floor(Date.now()/1000)
-
 
 function drawData(data){
   getDate(data)
@@ -36,62 +34,60 @@ function drawData(data){
   openUvModal(data);
 
 }
-
-
-
 export async function getCurrentData(zipcode) {
     
     try {
        const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${zipcode}/${now}?key=${apiKey}`);
-       //DUMMY DATA ------------------------------------------------
-        //day/spring
-        //  const response = await fetch(`../project_docs/2023-03-12.json`);
-        //  night/winter
-        //  const response = await fetch(`../project_docs/night_data.json`)
-        // const response = await fetch(`../project_docs/summer.json`)
-        // const response = await fetch(`../project_docs/fall.json`)
-        //------------------------------------------------------
        if (response.ok) {
-          const data = await response.json();
-          drawData(data)
-          callclock()
-          document.querySelector("#location").append(document.createElement('br'))
-          document.querySelector("#location").append("Current Time")
-          // console.log(data)
-       } else {
-         throw response;
-       }
-    } catch (errorResponse) {
+         const data = await response.json();
+         drawData(data)
+         callclock()
+         document.querySelector("#location").append(document.createElement('br'))
+         document.querySelector("#location").append("Current Time")
+         // console.log(data)
+        } else {
+          throw response;
+        }
+      } catch (errorResponse) {
         console.error(errorResponse);
+      }
     }
-  }
-
-  export async function getPastData(zipcode,date,dayTime) {
     
-    try {
-       const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${zipcode}/${date}T${dayTime}?key=${apiKey}&include=current`);
-      //DUMMY DATA----------------------------------------------------------
-        //day/spring
-        //  const response = await fetch(`../project_docs/2023-03-12.json`);
-        //  night/winter
-        //  const response = await fetch(`../project_docs/night_data.json`)
-        // const response = await fetch(`../project_docs/summer.json`)
-        // const response = await fetch(`../project_docs/fall.json`)
-      //DUMMY DATA-----------------------------------------------------------
-       if (response.ok) {
+    export async function getPastData(zipcode,date,dayTime) {
+      
+      try {
+        const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${zipcode}/${date}T${dayTime}?key=${apiKey}&include=current`);
+        if (response.ok) {
           const data = await response.json();
           drawData(data)
           getTime(data)
           // console.log(data)
-       } else {
-         throw response;
-       }
-    } catch (errorResponse) {
+        } else {
+          throw response;
+        }
+      } catch (errorResponse) {
         console.error(errorResponse);
+      }
     }
-  }
-
-  
-  
-
-
+    
+    
+    //DUMMY DATA ------------------------------------------------
+     //day/spring
+     //  const response = await fetch(`../project_docs/2023-03-12.json`);
+     //  night/winter
+     //  const response = await fetch(`../project_docs/night_data.json`)
+     // const response = await fetch(`../project_docs/summer.json`)
+     // const response = await fetch(`../project_docs/fall.json`)
+     //------------------------------------------------------
+    
+    
+    
+    //DUMMY DATA----------------------------------------------------------
+      //day/spring
+      //  const response = await fetch(`../project_docs/2023-03-12.json`);
+      //  night/winter
+      //  const response = await fetch(`../project_docs/night_data.json`)
+      // const response = await fetch(`../project_docs/summer.json`)
+      // const response = await fetch(`../project_docs/fall.json`)
+    //DUMMY DATA-----------------------------------------------------------
+    
