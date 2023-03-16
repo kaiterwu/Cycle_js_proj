@@ -66,7 +66,14 @@ export function makeUvWidget(data){
 
     const uvContainer = document.querySelector("#uv-widget")
     const uvDiv = document.createElement("div")
-    uvDiv.innerText = "UV" + " " + `${currentUv}`
+
+    let uvText;
+    if (currentUv === null){
+        uvText = 'N/A'
+    }else{
+        uvText = "UV" + " " + `${currentUv}`
+    }
+    uvDiv.innerText = uvText
 
     //["#3ded97", "#fff440","#e69138","#ff0800","#d200ff"]
 

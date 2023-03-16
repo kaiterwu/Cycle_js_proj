@@ -29,9 +29,29 @@
     font-family: 'Space Mono', monospace;
     
     line-height: 90px;
-    // width:400px;
-    // height:200px;
-    
 
-    
+}
+
+#speakerContainer{
+    color:white;
+    justify-self: flex-start;
+    align-self: center;
+}
+
+#songplay{
+    color: white;
+    background-color: black;
+    border:double 5px white;
+    border-radius:100%;
+}
+
+#songplay:hover{
+    color:black;
+    background-color: white;
+}
+
+
+#speakerContainer{
+    width:40px;
+    height:20px;
 }

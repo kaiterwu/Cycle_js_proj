@@ -140,7 +140,7 @@ export function getTime(data){
     }
     document.querySelector("#location").appendChild(document.createElement("br"))
     document.querySelector("#location").append(showTime)
-    console.log(dataTime)
+    // console.log(dataTime)
    
 }
 export function callclock(){

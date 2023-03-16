@@ -20,6 +20,9 @@
  
 
   <body>
+   <audio id = "startSong"  loop> 
+    <source src ="project_docs/sfx/reflections-139050.mp3">
+   </audio>
     <section class = "intro-modal">
       <div id = "introduction">Welcome to Cycle. This webpage is designed to 
         show realtime astronomical and weather data. Each graphic is an interactable element 
@@ -57,12 +60,19 @@
         <div id = "clock"></div>
         <div id = "menubuttons">
           <div id = "links">
+            <div id = speakerContainer>
+            <button id = 'songplay'>♫</button>
+           
+          </div>
+
+          <div id = 'fa-links'>
             <a href="https://github.com/kaiterwu/Cycle_js_proj.git">
               <i class = "fa fa-github fa-2x"> </i>
             </a>
             <a href =https://www.linkedin.com/in/kaiter-wu-7ba70a62>
               <i class = "fa fa-linkedin-square fa-2x"></i>
             </a>
+          </div>
           </div>
          
             <button id = "date-button">Select Date</button>
