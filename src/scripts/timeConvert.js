@@ -131,8 +131,7 @@ export function getDate(data){
 export function getTime(data){
     let dataTime = data.currentConditions.datetime
 
-    // let timeNow = document.querySelector('#clock')
-    // timeNow.innerText = dataTime
+
     let showTime; 
     if (dataTime === "09:00:00"){
         showTime = "9:00 AM"

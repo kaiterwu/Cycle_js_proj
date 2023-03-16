@@ -22,11 +22,6 @@
    const tempMax = queryData.days[0].tempmax
    const tempFeels = queryData.days[0].feelslike
 
-//    console.log(currentTemp)
-//    console.log(tempMin)
-//    console.log(tempMax)
-//    console.log(tempFeels)
-
    let leftSide = currentTemp - tempMin 
    let rightSide = tempMax - currentTemp
 
@@ -85,7 +80,7 @@ export function makeTempWidget(data){
     
     const tempContainer = document.querySelector("#temp-widget")
     const tempDiv = document.createElement("div")
-    tempDiv.innerText = `${currentTemp}` + '°F'
+    tempDiv.innerText = `${Math.floor(currentTemp)}` + '°F'
    tempContainer.append(tempDiv)
 }
 
@@ -126,7 +121,7 @@ export function openTempModal(data){
         const tempImg = document.createElement("div")
 
         upperHead.innerText = "Day High is "
-        upperTemp.innerText = `${tempMax}`
+        upperTemp.innerText = `${Math.floor(tempMax)}`+ '°F'
 
         upperTemp.style.color = "black"
         upperTemp.style.border = "5px solid #ff0c00"
@@ -136,7 +131,7 @@ export function openTempModal(data){
         upperTemp.style.textShadow = "1px 1px 5px black"
 
         lowerHead.innerText = "Day Low is"
-        lowerTemp.innerText = `${tempMin}`
+        lowerTemp.innerText = `${Math.floor(tempMin)}`+ '°F'
 
         lowerTemp.style.color = "black"
         lowerTemp.style.border = "5px solid #29cdff"
@@ -156,9 +151,9 @@ export function openTempModal(data){
         let feelsTempContainer = document.createElement("div")
 
         currentContainer.innerText = "Currently:"
-        currentTempContainer.innerText = `${currentTemp}` + '°F'
+        currentTempContainer.innerText = `${Math.floor(currentTemp)}` + '°F'
         feelsContainer.innerText = "Feels like:"
-        feelsTempContainer.innerText =`${tempFeels}` + '°F'
+        feelsTempContainer.innerText =`${Math.floor(tempFeels)}` + '°F'
 
         tempImg.append(currentContainer)
         tempImg.append(currentTempContainer)

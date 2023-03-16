@@ -53,13 +53,6 @@ export function drawSun(queryData,diameter,inner,stroke,strokeColor,id){
         }
     }
 
-    // console.log(currentSeconds);
-    // console.log(sunriseSeconds);
-    // console.log(sunsetSeconds);
-    // console.log(nightTime(currentSeconds,sunriseSeconds,sunsetSeconds))
-    // console.log(dayTime(currentSeconds,sunriseSeconds,sunsetSeconds))
-    // console.log(timeElapse(currentSeconds,sunriseSeconds,sunsetSeconds))
-
     let nightSeconds = nightTime(currentSeconds,sunriseSeconds,sunsetSeconds)
     let daySeconds = dayTime(currentSeconds,sunriseSeconds,sunsetSeconds)
     let nowSeconds = timeElapse(currentSeconds,sunriseSeconds,sunsetSeconds)
@@ -79,8 +72,7 @@ export function drawSun(queryData,diameter,inner,stroke,strokeColor,id){
     const arc =  d3.arc()
     .innerRadius(radius-inner)
     .outerRadius(radius)
-    // .startAngle(Math.PI/2)
-    // .endAngle(Math.PI*3/2)
+    
         
 
 

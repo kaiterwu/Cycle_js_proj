@@ -40,9 +40,7 @@ export function drawMoon(queryData,diameter,stroke,strokeColor,id){
     const arc =  d3.arc()
     .innerRadius(radius-80)
     .outerRadius(radius)
-    // .startAngle([MATH.PI])
-    // .endAngle([0])
-    
+   
         
 
 

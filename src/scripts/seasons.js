@@ -1,6 +1,6 @@
 // code will be similar to sunmoves script 
 import { currentDays } from "./timeConvert";
-//(queryData,diameter,inner,stroke,strokeColor,id)
+
 export function drawSeasons(queryData,diameter,inner,stroke,strokeColor,id){
 
     const width = diameter,
@@ -63,11 +63,6 @@ export function drawSeasons(queryData,diameter,inner,stroke,strokeColor,id){
         
     }
 
-    // console.log(winterTime(currentDay))
-    // console.log(springTime(currentDay))
-    // console.log(summerTime(currentDay))
-    // console.log(fallTime(currentDay))
-    // console.log(queryData.days[0].datetime)
 
     const data = 
     {"current":currentDay,"winter":winterTime(currentDay),"spring":springTime(currentDay),
