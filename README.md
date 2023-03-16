@@ -6,7 +6,7 @@
 
 ## <u>Background</u>
 
-Cycle is an asynchronous data visualization that grabs data from the VisualCrossing weather api  https://www.visualcrossing.com/; it includes several different datapoints such as moon index, sunrise/sunset, and other weather statistics. The goal of this API is to visualize these statistics in series of circular like elements that can be interacted with on the page. 
+Cycle is an asynchronous data visualization that grabs data from the [VisualCrossing weather api]( https://www.visualcrossing.com/);it includes several different datapoints such as moon index, sunrise/sunset, and other weather statistics. The goal of this API is to visualize these statistics in series of circular like elements that can be interacted with on the page. 
 
 In cycle, the users will be able to click on an element such as the "sunrise/sunset" bar and see a visualization of this data in the form of a circle that will be drawn based on the percentage/value of the statistic being shown. ie, the sunrise/sunset bar will animate based on time of day and will display when sunset is,and will display when sunrise is. Other features include a realtime clock that will animate using setinterval, and grabbing data from prevous dates. This API allows us to grab data from up to several decades. Users should also be able to input their zipcode so to see data for their current location. 
 
