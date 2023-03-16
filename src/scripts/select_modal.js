@@ -45,8 +45,7 @@ export function openSelectModal(){
         selectDate.setAttribute("id","input-date")
 
         let currentDate = new Date()
-        currentDate = currentDate.toISOString().slice(0,10)
-        selectDate.max = currentDate
+        // currentDate = currentDate.toISOString().slice(0,10)
         selectDate.min = "1970-01-01"
         
         const dayNight = document.createElement("div")

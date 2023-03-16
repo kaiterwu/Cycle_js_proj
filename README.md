@@ -41,7 +41,7 @@ For the main page, 7 total different pages render based on the element selected.
 
 ## Features 
 
-Cycle allows users to see different weather parameters for current time and past time. Images in some graph elements are dynamic based off of parameters selected. For example, a sun or moon will appear based on whether the sun has set. Moon phases images will display different phases based off of current moon phase. And season images will change based off of day of the year. 
+Cycle allows users to see different weather parameters for current time,future forecast, and past time. Images in some graph elements are dynamic based off of parameters selected. Data ranges from 1970-01-01 to an indefinite date based on data provided by the API. For accuracy the next 15 days are most likely the most viable. For example, a sun or moon will appear based on whether the sun has set. Moon phases images will display different phases based off of current moon phase. And season images will change based off of day of the year. 
 
 Data limitation is based on historical data provided by the weather API. Users are given the option to select any US based ZIP code,a date, and either nightime or daytime if choosing data in the past when selecting data filters. 
 

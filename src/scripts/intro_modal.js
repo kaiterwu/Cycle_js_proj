@@ -36,10 +36,10 @@ export function volume(){
     function mute(){    
         if (song.muted){
             song.muted = false
-            songButton.innerText = '♫'
+            songButton.innerText = "⏸"
         }else{
             song.muted = true 
-            songButton.innerText = "⏸"
+            songButton.innerText = '♫'
         }
     }  
     songButton.addEventListener("click",mute)

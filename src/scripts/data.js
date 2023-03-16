@@ -61,7 +61,6 @@ export async function getCurrentData(zipcode) {
           const data = await response.json();
           drawData(data)
           getTime(data)
-          console.log(data)
         } else {
           throw response;
         }
