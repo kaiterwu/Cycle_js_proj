@@ -18,7 +18,7 @@ All graphing elements in this project are rendered with the basic D3 library. Va
 ### Implementation 
 D3 was used to implement the visualization of concentric circles. It was decided early on to use Modals in order to 
 keep the organization of the project clear. Two modals were used in total that are rerendered using JavaScript HTML DOM 
-methods. Methods were compiled into compacted functions which were then passed to my index.js. 
+methods. Methods were compiled into compacted asynchrnous functions that depend on fetch, which were then passed to my index.js. 
 
 # ![Alt text](project_docs/proj_images/data_code_snippet.png )
 
