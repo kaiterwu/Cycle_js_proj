@@ -150,9 +150,9 @@ export function openTempModal(data){
         let feelsContainer = document.createElement("div")
         let feelsTempContainer = document.createElement("div")
 
-        currentContainer.innerText = "Currently:"
+        currentContainer.innerText = "Currently"
         currentTempContainer.innerText = `${Math.floor(currentTemp)}` + '°F'
-        feelsContainer.innerText = "Feels like:"
+        feelsContainer.innerText = "Feels like"
         feelsTempContainer.innerText =`${Math.floor(tempFeels)}` + '°F'
 
         tempImg.append(currentContainer)

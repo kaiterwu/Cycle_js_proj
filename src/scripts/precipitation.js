@@ -140,7 +140,7 @@ export function openPrecipModal(data){
             }
             
         
-            lowerPrecip.innerText = precipType.join(" ")
+            lowerPrecip.innerText = precipType.join(",")
         }else{
             lowerPrecip.innerText = "None"
         }
