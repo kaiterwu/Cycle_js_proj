@@ -13,15 +13,31 @@ In cycle, the users will be able to click on an element such as the "sunrise/sun
 See [here](./project_docs/cycle_wire_frame.pdf) to see a drafted visualization of the project. 
 
 
-## <u>Libraries</u>
-As of now I'm going to be using D3 to visualize some of the data that will multi-segmented such as sunrise/sunset and moonphases/seasons. Canvas and vanillajavascript will also be implemented to accomplish the desired animation effects. 
-Other libraries that I'm interested in using/ or will take inspration from include: 
+## <u>Libraries and Methods</u>
+All graphing elements in this project are rendered with the basic D3 library. Vanilla JavaScript, JavaScript HTML DOM, and CSS were utilized. Wepback was used to bundle JavaScript code while npm was used to handle project dependencies. 
+### Implementation 
+D3 was used to implement the visualization of concentric circles. It was decided early on to use Modals in order to 
+keep the organization of the project clear. Two modals were used in total that are rerendered using JavaScript HTML DOM 
+methods. 
+#### User Modals
 
-https://kimmobrunfeldt.github.io/progressbar.js/ 
--a js library for making progress bars 
+# ![Alt text](project_docs/proj_images/intro_modal.png "Introduction Modal")
+# ![Alt text](project_docs/proj_images/select_modal.png "Select Date Modal")
 
-https://github.hubspot.com/odometer/docs/welcome/
-a js library for making odometer effect, possible use for clock/time date 
+The above pages share the same modal. 
+#### Figure Modals
+For the main page, 7 total different pages render based on the element selected. Elements are indicated to be selected with a simple CSS hover effect. Both the figures on the main page and the ones rendered on the modal pages are dynmically generated based on data fetched at time of date selected. See below for all possible pages. 
+
+# ![Alt text](project_docs/proj_images/day_modal.png "Day Modal")
+# ![Alt text](project_docs/proj_images/moon_modal.png "Moon Modal")
+# ![Alt text](project_docs/proj_images/seasons_modal.jpeg "Seasons Modal")
+# ![Alt text](project_docs/proj_images/temperature_modal.png "Temperature Modal")
+# ![Alt text](project_docs/proj_images/humidity_modal.png "Humidity Modal")
+# ![Alt text](project_docs/proj_images/precip_modal.png "Precipitation Modal")
+# ![Alt text](project_docs/proj_images/uv_modal.png"UV Index Modal")
+
+
+
 
 
 
