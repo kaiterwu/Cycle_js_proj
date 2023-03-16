@@ -1,7 +1,7 @@
 # Cycle
 
 ## <b>[Wire frame diagram](./project_docs/cycle_wire_frame.pdf)</b>
-
+    ![Alt text](project_docs/proj_images/splash_page.png)
 ## [Try it here!](https://kaiterwu.github.io/Cycle_js_proj/)
 
 ## <u>Background</u>
