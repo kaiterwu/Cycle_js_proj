@@ -147,7 +147,7 @@ export function openMoonModal(queryData){
                 moonImg.src = 'images/moons/last_quarter.png'
                 break;
             case "Waning Crescent":
-                moonImg.src = 'images/moons/waxing_crescent.png'
+                moonImg.src = 'images/moons/waning_crescent.png'
                 break;
         }
 
