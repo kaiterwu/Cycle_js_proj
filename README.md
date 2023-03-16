@@ -1,8 +1,8 @@
 # Cycle
 
 ## <b>[Wire frame diagram](./project_docs/cycle_wire_frame.pdf)</b>
-   # ![Alt text](project_docs/proj_images/splash_page.png)
 ## [Try it here!](https://kaiterwu.github.io/Cycle_js_proj/)
+   # ![Alt text](project_docs/proj_images/splash_page.png)
 
 ## <u>Background</u>
 
@@ -29,7 +29,7 @@ methods. Methods were compiled into compacted asynchrnous functions that depend 
 
 The above pages share the same modal. 
 ### Figure Modals
-For the main page, 7 total different pages render based on the element selected. Elements are indicated to be selected with a simple CSS hover effect. Both the figures on the main page and the ones rendered on the modal pages are dynmically generated based on data fetched at time of date selected. See below for all possible pages. 
+For the main page, 7 total different pages render based on the element selected. Elements are indicated to be selected with a simple CSS hover effect. Both the figures on the main page and the ones rendered on the modal pages are dynamically generated based on data fetched at time of date selected. See below for all possible pages. 
 
 # ![Alt text](project_docs/proj_images/day_modal.png "Day Modal")
 # ![Alt text](project_docs/proj_images/moon_modal.png "Moon Modal")
@@ -41,7 +41,7 @@ For the main page, 7 total different pages render based on the element selected.
 
 ## Features 
 
-Cycle allows users to see different weather parameters for current time and past time. Images in some graph elements are dynamic based off of parameters selected. For example, a sun or moon will appear based on whether the sun has set. Moon phases images will display different based off of current moon phase. And season images will change based off of day of the year. 
+Cycle allows users to see different weather parameters for current time and past time. Images in some graph elements are dynamic based off of parameters selected. For example, a sun or moon will appear based on whether the sun has set. Moon phases images will display different phases based off of current moon phase. And season images will change based off of day of the year. 
 
 Data limitation is based on historical data provided by the weather API. Users are given the option to select any US based ZIP code,a date, and either nightime or daytime if choosing data in the past when selecting data filters. 
 
@@ -60,11 +60,11 @@ Create basic visualization of data in project and be able to ouput data in any f
 3/15- Complete visualization for all desired elements, try to work on animation logic for each element. Put final touches on CSS and colors.
 
 ## Future Implementations
--Add a feature to allow clock displayed to match timezone selected. 
--Add a feature to allow more images to be dynamically changed based on weather conditions for precipitation and UV index. 
--Add a button to allow a user to switch between day and night data for historical data. 
--Allow users to access timezones out of the US and locations outside of the US. (Will require a different API)
--Allow users to select data based on specific time. 
+* Add a feature to allow clock displayed to match timezone selected. 
+* Add a feature to allow more images to be dynamically changed based on weather conditions for precipitation and UV index. 
+* Add a button to allow a user to switch between day and night data for historical data. 
+* Allow users to access timezones out of the US and locations outside of the US. (Will require a different API)
+* Allow users to select data based on specific time. 
 
 
 
