@@ -25,7 +25,7 @@ methods.
 # ![Alt text](project_docs/proj_images/select_modal.png "Select Date Modal")
 
 The above pages share the same modal. 
-#### Figure Modals
+### Figure Modals
 For the main page, 7 total different pages render based on the element selected. Elements are indicated to be selected with a simple CSS hover effect. Both the figures on the main page and the ones rendered on the modal pages are dynmically generated based on data fetched at time of date selected. See below for all possible pages. 
 
 # ![Alt text](project_docs/proj_images/day_modal.png "Day Modal")
@@ -34,7 +34,7 @@ For the main page, 7 total different pages render based on the element selected.
 # ![Alt text](project_docs/proj_images/temperature_modal.png "Temperature Modal")
 # ![Alt text](project_docs/proj_images/humidity_modal.png "Humidity Modal")
 # ![Alt text](project_docs/proj_images/precip_modal.png "Precipitation Modal")
-# ![Alt text](project_docs/proj_images/uv_modal.png"UV Index Modal")
+# ![Alt text](project_docs/proj_images/uv_modal.png "UV Index Modal")
 
 
 
