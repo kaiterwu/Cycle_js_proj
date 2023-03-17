@@ -20,6 +20,7 @@ export function openIntroModal(){
     function playSong(){
         let song = document.querySelector('#startSong')
         song.play()
+        song.volume = 0.3;
     }
 
 
@@ -36,7 +37,7 @@ export function volume(){
     function mute(){    
         if (song.muted){
             song.muted = false
-            songButton.innerText = "⏸"
+            songButton.innerText = "∣∣"
         }else{
             song.muted = true 
             songButton.innerText = '♫'
