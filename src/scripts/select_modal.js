@@ -80,7 +80,7 @@ export function openSelectModal(){
         const enterZip = document.createElement("input")
         enterZip.setAttribute("type", "number")
         enterZip.setAttribute("id","selectZip")
-        enterZip.placeholder = "ZIP code"
+        enterZip.placeholder = "ZIP Code"
         
         
 
