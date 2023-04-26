@@ -2,7 +2,7 @@
 
 ## <b>[Wire frame diagram](./project_docs/cycle_wire_frame.pdf)</b>
 ## [Try it here!](https://kaiterwu.github.io/Cycle_js_proj/)
-   # ![Alt text](project_docs/proj_images/splash_page.png)
+ # ![Alt text](project_docs/proj_images/splash_page.png)
 
 ## <u>Background</u>
 
