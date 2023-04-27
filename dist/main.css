@@ -165,6 +165,7 @@ table {
   color: black;
   cursor:pointer;
 }
+
 #selectZip:hover{
   cursor:text;
 }
