@@ -163,6 +163,15 @@ table {
   background-color: white;
   border-color: black;
   color: black;
+  cursor: pointer;
+}
+
+#selectZip:hover {
+  cursor: text;
+}
+
+#dayNight input:hover {
+  cursor: pointer;
 }
 
 #introduction {
