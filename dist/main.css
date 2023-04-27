@@ -170,6 +170,10 @@ table {
   cursor:text;
 }
 
+#dayNight input:hover{
+  cursor:pointer;
+}
+
 #introduction {
   height: 30%;
   font-size: 18px;
