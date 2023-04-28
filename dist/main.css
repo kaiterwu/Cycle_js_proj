@@ -1,3 +1,6 @@
+/*!****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/reset.css ***!
+  \****************************************************************************************************/
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -46,6 +49,560 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-@keyframes fadeIn{0%{opacity:0}100%{opacity:1}}@keyframes infiniteFade{0%{opacity:1}50%{opacity:0}100%{opacity:1}}@keyframes partialFade{0%{opacity:1}50%{opacity:.25}100%{opacity:1}}#location{animation:infiniteFade 5s infinite}#fa-links .fa{animation:partialFade 2s infinite}#upper-text>h1{animation:infiniteFade 4s infinite}#lower-text>h1{animation:infiniteFade 4s infinite;animation-delay:2s}.astro-modal{border:double 10px #fff;border-radius:20px;display:flex;justify-content:space-between;width:1000px;height:600px;background-color:#000;box-shadow:0px 5px 20px rgba(255,255,255,.4);position:absolute;top:22.5%;z-index:1000}.intro-modal{border:double 10px #fff;border-radius:100%;display:flex;flex-direction:column;justify-content:space-around;align-items:center;width:600px;height:600px;background-color:#000;box-shadow:0px 5px 20px rgba(255,255,255,.4);position:absolute;z-index:1000;animation:fadeIn 3s}#zipcode{border:inherit;border-radius:20px;width:200px;height:50px;background-color:#000;color:#fff;box-shadow:inherit;margin:10px;font-size:30px;font-family:"Gill Sans","Gill Sans MT",Calibri,"Trebuchet MS",sans-serif;text-shadow:1px 1px 5px #fff;text-align:center}#start{border:inherit;border-radius:20px;width:150px;height:75px;background-color:#000;color:#fff;box-shadow:inherit;margin:10px;font-size:30px;font-family:"Gill Sans","Gill Sans MT",Calibri,"Trebuchet MS",sans-serif;text-shadow:1px 1px 5px #fff}#start:hover,#date-button:hover,#closeSelect:hover,#enterInputs:hover,#selectZip:hover,#input-date{background-color:#fff;border-color:#000;color:#000;cursor:pointer}#selectZip:hover{cursor:text}#dayNight input:hover{cursor:pointer}#introduction{height:30%;font-size:18px;color:#fff;font-family:"Gill Sans","Gill Sans MT",Calibri,"Trebuchet MS",sans-serif;text-align:block;text-shadow:1px 1px 5px #fff;padding:15%;line-height:35px}#svg-container{width:600px;display:grid}#img-container{display:grid}#img-container *{grid-area:1/1;justify-self:center;align-self:center}#svg-container *{grid-area:1/1}#svg-container>img{width:400px;height:400px;object-fit:fill;align-self:center;justify-self:center;z-index:-1}.astro-modal{animation:fadeIn 2s}#info-text{display:flex;flex-direction:column;height:inherit;width:400px;justify-content:space-between;align-items:flex-end}#info-text h1,p{font-size:45px;color:#fff;font-family:"Gill Sans","Gill Sans MT",Calibri,"Trebuchet MS",sans-serif;text-align:center;text-shadow:1px 1px 5px #fff}#info-text h1{font-size:80px}.close-btn{font-size:45px;color:#fff;padding:10px 10px;background-color:#000;box-shadow:0px 5px 20px rgba(255,255,255,.4);border:double 10px #fff;border-radius:20px;margin:5px;width:200px}.close-btn:hover{background-color:#fff;border-color:#000;color:#000}#upper-text,#lower-text{display:flex;flex-direction:column;width:inherit;height:250px;justify-content:space-evenly;align-items:center}.hidden{display:none}.overlay{position:fixed;top:0;bottom:0;left:0;right:0;width:100%;height:100%;background:rgba(0,0,0,.5);backdrop-filter:blur(2px);z-index:1}.moon_background{border-radius:100%;background-color:#fff;width:350px;height:350px;z-index:9}#header{display:flex;justify-content:stretch;align-items:center;justify-content:center}#date,#clock,#menubuttons{height:inherit;text-shadow:1px 1px 20px #fff}#date,#clock{width:400px;border-right:inherit;box-shadow:inherit}#menubuttons{width:200px}#date,#clock{color:#fff;font-size:60px;text-align:center;font-family:"Space Mono",monospace;line-height:90px}#speakerContainer{color:#fff;justify-self:flex-start;align-self:center}#songplay{color:#fff;background-color:#000;border:double 5px #fff;border-radius:100%}#songplay:hover{color:#000;background-color:#fff;cursor:pointer}#speakerContainer{width:40px;height:20px}input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}#closeSelect,#input-date,#closeSelect,#selectZip,#enterInputs,#dayNight{border:double 10px #fff;border-radius:20px;height:60px;width:300px;background-color:#2a2929;color:#fff;box-shadow:0px 5px 20px rgba(255,255,255,.4);text-shadow:1px 1px 5px #fff;font-size:30px;text-align:center}#selectContainer{display:flex;flex-direction:column;width:inherit;height:inherit;align-items:center;justify-content:space-evenly;margin-top:10%}#dayNight{display:flex;justify-content:center;align-items:center}#dayNight *{font-family:"Gill Sans","Gill Sans MT",Calibri,"Trebuchet MS",sans-serif}#dayNight label{padding-left:10px}#closeSelect{margin-top:20%}@keyframes fadeIn{0%{opacity:0}100%{opacity:1}}@keyframes infiniteFade{0%{opacity:1}50%{opacity:0}100%{opacity:1}}@keyframes partialFade{0%{opacity:1}50%{opacity:.25}100%{opacity:1}}.weather-widgets>div{display:flex;justify-content:center;width:400px}#temp-widget>div,#humid-widget>div,#uv-widget>div,#precip-widget>div{color:#fff;text-align:center;vertical-align:center;font-size:60px;font-family:"Gill Sans","Gill Sans MT",Calibri,"Trebuchet MS",sans-serif;text-shadow:1px 1px 20px #fff;width:150px;height:150px;line-height:150px;animation:fadeIn 5s}.weather-widgets svg:hover{border:solid 0px #fff;border-radius:100%;box-shadow:0 0px 20px #fff;transition:box-shadow .3s ease-out;cursor:pointer}#svg-container div{font-size:60px;color:#fff;font-family:"Gill Sans","Gill Sans MT",Calibri,"Trebuchet MS",sans-serif;text-align:center;text-shadow:1px 1px 20px #fff;font-weight:400}*{font-family:"Gill Sans","Gill Sans MT",Calibri,"Trebuchet MS",sans-serif}body{background-color:#000;display:flex;align-items:center;justify-content:center;position:relative}#background{margin-top:50px;display:flex;flex-direction:column;background-color:#000;max-height:auto;max-width:1000px;position:relative;z-index:auto;align-items:center}#header{height:90px;width:1000px;border:double 10px #fff;border-radius:20px;box-shadow:0px 0px 20px rgba(255,255,255,.4)}#menubuttons{display:flex;flex-direction:column;justify-content:space-between}.fa{color:#fff;padding:5px}.fa:hover{color:gray}#links{display:flex;justify-content:space-around}#date-button{margin:10px;border:double 5px #fff;border-radius:10%;background-color:#000;color:#fff;font-family:"Gill Sans","Gill Sans MT",Calibri,"Trebuchet MS",sans-serif;text-shadow:1px 1px 5px #fff;box-shadow:0px 0px 20px rgba(255,255,255,.4)}#view{display:flex;background-color:#000;height:600px;width:1000px;z-index:auto;justify-content:flex-start;align-items:center;position:relative;border:double 10px #fff;border-radius:20px;margin-top:20px;box-shadow:0px 5px 20px rgba(255,255,255,.4)}.astro-data{display:grid}.astro-data *{grid-area:1/1}.weather-widgets{display:flex;flex-direction:column;max-height:600px;max-width:400px}#location{display:flex;flex-direction:column;justify-content:center;border:inherit;color:#fff;font-size:14px;font-family:"Gill Sans","Gill Sans MT",Calibri,"Trebuchet MS",sans-serif;width:100px;height:100px;align-self:center;justify-self:center;text-shadow:1px 1px 10px #fff;text-align:center;line-height:25px}#location *{vertical-align:middle}#seasons,#sun-path,#moons{margin-left:auto;margin-right:auto;left:0;right:0;display:flex;justify-content:center;align-items:center}.astro-data svg:hover{border:solid 0px #fff;border-radius:100%;box-shadow:0 0px 20px #fff;transition:box-shadow .3s ease-out;cursor:pointer}a:visited{color:#000;text-decoration:none}
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes infiniteFade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes partialFade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#location {
+  animation: infiniteFade 5s infinite;
+}
 
-/*# sourceMappingURL=main.css.map*/
+#fa-links .fa {
+  animation: partialFade 2s infinite;
+}
+
+#upper-text > h1 {
+  animation: infiniteFade 4s infinite;
+}
+
+#lower-text > h1 {
+  animation: infiniteFade 4s infinite;
+  animation-delay: 2s;
+}
+
+.astro-modal {
+  border: double 10px white;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 1000px;
+  height: 600px;
+  background-color: black;
+  box-shadow: 0px 5px 20px rgba(255, 255, 255, 0.4);
+  position: absolute;
+  top: 22.5%;
+  z-index: 1000;
+}
+
+.intro-modal {
+  border: double 10px white;
+  border-radius: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 600px;
+  height: 600px;
+  background-color: black;
+  box-shadow: 0px 5px 20px rgba(255, 255, 255, 0.4);
+  position: absolute;
+  z-index: 1000;
+  animation: fadeIn 3s;
+}
+
+#zipcode {
+  border: inherit;
+  border-radius: 20px;
+  width: 200px;
+  height: 50px;
+  background-color: black;
+  color: white;
+  box-shadow: inherit;
+  margin: 10px;
+  font-size: 30px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-shadow: 1px 1px 5px white;
+  text-align: center;
+}
+
+#start {
+  border: inherit;
+  border-radius: 20px;
+  width: 150px;
+  height: 75px;
+  background-color: black;
+  color: white;
+  box-shadow: inherit;
+  margin: 10px;
+  font-size: 30px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-shadow: 1px 1px 5px white;
+}
+
+#start:hover, #date-button:hover, #closeSelect:hover, #enterInputs:hover,
+#selectZip:hover, #input-date {
+  background-color: white;
+  border-color: black;
+  color: black;
+  cursor: pointer;
+}
+
+#selectZip:hover {
+  cursor: text;
+}
+
+#dayNight input:hover {
+  cursor: pointer;
+}
+
+#introduction {
+  height: 30%;
+  font-size: 18px;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-align: block;
+  text-shadow: 1px 1px 5px white;
+  padding: 15%;
+  line-height: 35px;
+}
+
+#svg-container {
+  width: 600px;
+  display: grid;
+}
+
+#img-container {
+  display: grid;
+}
+
+#img-container * {
+  grid-area: 1/1;
+  justify-self: center;
+  align-self: center;
+}
+
+#svg-container * {
+  grid-area: 1/1;
+}
+
+#svg-container > img {
+  width: 400px;
+  height: 400px;
+  object-fit: fill;
+  align-self: center;
+  justify-self: center;
+  z-index: -1;
+}
+
+.astro-modal {
+  animation: fadeIn 2s;
+}
+
+#info-text {
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+  width: 400px;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+#info-text h1, p {
+  font-size: 45px;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-align: center;
+  text-shadow: 1px 1px 5px white;
+}
+
+#info-text h1 {
+  font-size: 80px;
+}
+
+.close-btn {
+  font-size: 45px;
+  color: white;
+  padding: 10px 10px;
+  background-color: black;
+  box-shadow: 0px 5px 20px rgba(255, 255, 255, 0.4);
+  border: double 10px white;
+  border-radius: 20px;
+  margin: 5px;
+  width: 200px;
+}
+
+.close-btn:hover {
+  background-color: white;
+  border-color: black;
+  color: black;
+  cursor: pointer;
+}
+
+#upper-text, #lower-text {
+  display: flex;
+  flex-direction: column;
+  width: inherit;
+  height: 250px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  z-index: 1;
+}
+
+.moon_background {
+  border-radius: 100%;
+  background-color: white;
+  width: 350px;
+  height: 350px;
+  z-index: 9;
+}
+
+#header {
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+  justify-content: center;
+}
+
+#date, #clock, #menubuttons {
+  height: inherit;
+  text-shadow: 1px 1px 20px white;
+}
+
+#date, #clock {
+  width: 400px;
+  border-right: inherit;
+  box-shadow: inherit;
+}
+
+#menubuttons {
+  width: 200px;
+}
+
+#date, #clock {
+  color: white;
+  font-size: 60px;
+  text-align: center;
+  font-family: "Space Mono", monospace;
+  line-height: 90px;
+}
+
+#speakerContainer {
+  color: white;
+  justify-self: flex-start;
+  align-self: center;
+}
+
+#songplay {
+  color: white;
+  background-color: black;
+  border: double 5px white;
+  border-radius: 100%;
+}
+
+#songplay:hover {
+  color: black;
+  background-color: white;
+  cursor: pointer;
+}
+
+#speakerContainer {
+  width: 40px;
+  height: 20px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#closeSelect, #input-date, #closeSelect, #selectZip, #enterInputs, #dayNight {
+  border: double 10px white;
+  border-radius: 20px;
+  height: 60px;
+  width: 300px;
+  background-color: rgb(42, 41, 41);
+  color: white;
+  box-shadow: 0px 5px 20px rgba(255, 255, 255, 0.4);
+  text-shadow: 1px 1px 5px white;
+  font-size: 30px;
+  text-align: center;
+}
+
+#selectContainer {
+  display: flex;
+  flex-direction: column;
+  width: inherit;
+  height: inherit;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 10%;
+}
+
+#dayNight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#dayNight * {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+#dayNight label {
+  padding-left: 10px;
+}
+
+#closeSelect {
+  margin-top: 20%;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes infiniteFade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes partialFade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.weather-widgets > div {
+  display: flex;
+  justify-content: center;
+  width: 400px;
+}
+
+#temp-widget > div, #humid-widget > div, #uv-widget > div, #precip-widget > div {
+  color: white;
+  text-align: center;
+  vertical-align: center;
+  font-size: 60px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-shadow: 1px 1px 20px white;
+  width: 150px;
+  height: 150px;
+  line-height: 150px;
+  animation: fadeIn 5s;
+}
+
+.weather-widgets svg:hover {
+  border: solid 0px white;
+  border-radius: 100%;
+  box-shadow: 0 0px 20px rgb(255, 255, 255);
+  transition: box-shadow 0.3s ease-out;
+  cursor: pointer;
+}
+
+#svg-container div {
+  font-size: 60px;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-align: center;
+  text-shadow: 1px 1px 20px white;
+  font-weight: 400;
+}
+
+* {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+body {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+#background {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  max-height: auto;
+  max-width: 1000px;
+  position: relative;
+  z-index: auto;
+  align-items: center;
+}
+
+#header {
+  height: 90px;
+  width: 1000px;
+  border: double 10px white;
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4);
+}
+
+#menubuttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.fa {
+  color: white;
+  padding: 5px;
+}
+
+.fa:hover {
+  color: grey;
+}
+
+#links {
+  display: flex;
+  justify-content: space-around;
+}
+
+#date-button {
+  margin: 10px;
+  border: double 5px white;
+  border-radius: 10%;
+  background-color: black;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-shadow: 1px 1px 5px white;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4);
+}
+
+#view {
+  display: flex;
+  background-color: black;
+  height: 600px;
+  width: 1000px;
+  z-index: auto;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  border: double 10px white;
+  border-radius: 20px;
+  margin-top: 20px;
+  box-shadow: 0px 5px 20px rgba(255, 255, 255, 0.4);
+}
+
+.astro-data {
+  display: grid;
+}
+
+.astro-data * {
+  grid-area: 1/1;
+}
+
+.weather-widgets {
+  display: flex;
+  flex-direction: column;
+  max-height: 600px;
+  max-width: 400px;
+}
+
+#location {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: inherit;
+  color: white;
+  font-size: 14px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  width: 100px;
+  height: 100px;
+  align-self: center;
+  justify-self: center;
+  text-shadow: 1px 1px 10px white;
+  text-align: center;
+  line-height: 25px;
+}
+
+#location * {
+  vertical-align: middle;
+}
+
+#seasons, #sun-path, #moons {
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.astro-data svg:hover {
+  border: solid 0px white;
+  border-radius: 100%;
+  box-shadow: 0 0px 20px rgb(255, 255, 255);
+  transition: box-shadow 0.3s ease-out;
+  cursor: pointer;
+}
+
+#seasons svg {
+  z-index: 4;
+}
+
+#moons svg {
+  z-index: 5;
+}
+
+#sun-path svg {
+  z-index: 6;
+}
+
+a:visited {
+  color: black;
+  text-decoration: none;
+}

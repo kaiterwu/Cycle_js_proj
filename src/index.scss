@@ -156,6 +156,18 @@ body{
     box-shadow: 0 0px 20px rgb(255, 255, 255);
     transition: box-shadow 0.3s ease-out;
     cursor:pointer;
+    
+}
+
+#seasons svg{
+    z-index:4;
+}
+#moons svg{
+    z-index:5;
+}
+
+#sun-path svg{
+    z-index:6;
 }
 
 
