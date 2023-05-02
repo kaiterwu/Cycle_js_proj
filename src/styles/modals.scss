@@ -129,6 +129,14 @@
     line-height: 35px;
 }
 
+#interactableElement{
+    // font-weight:bolder;
+    // text-decoration: underline;
+    color:rgb(255, 136, 0);
+    text-shadow: 1px 1px 5px rgb(255,136,0);
+
+}
+
 #svg-container{
     width:600px;
     display: grid;
