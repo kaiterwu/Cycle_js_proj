@@ -3,12 +3,8 @@ import { openSelectModal } from "./scripts/select_modal";
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    
     openIntroModal()
     openSelectModal()
     volume()
-   
-        
-    
 });
 
